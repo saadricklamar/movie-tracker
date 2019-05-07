@@ -1,33 +1,89 @@
 .App {
   text-align: center;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  height: 1200px;
+  background-image: url(../../images/redmovie.jpeg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-left: 1px solid white;
+}
+header {
+  padding-top: 50px;
+  color: white;
+  font-family: Anton;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  margin: 0 auto 25px auto;
+  font-size: 100px;
+  color: #307F9F;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+main form {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 250px;
+}
+
+input {
+  height: 35px;
+  border: 2px solid #307F9F;
+  background: gray;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+i {
+  color: #AF2E53;
+}
+
+input::placeholder {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.login {
+  background-color: #307F9F;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 1.25em;
+  font-weight: normal;
+  margin: 1.5rem 6.5rem 1.5rem 0;
+  outline: none;
+  padding: .75rem 1rem;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+}
+
+p {
+  color: #307F9F;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a p:hover {
+  color: white;
 }
