@@ -4,6 +4,7 @@ import {fetchData} from '../../util/fetchData.js';
 import {key} from '../../util/key.js';
 import {cleanMovieData} from '../../util/helpers.js';
 import Login from '../Login/Login';
+import MovieContainer from '../../components/MovieContainer';
 
 
 class App extends Component {
@@ -35,7 +36,8 @@ fetchMovies= async ()=>{
    })
     return (
       <div className='App'>
-        <Login />
+        {/* <Login /> */}
+        <MovieContainer movies={this.state.movies}/>
         {/* {displayMovies} */}
       </div>
     );
