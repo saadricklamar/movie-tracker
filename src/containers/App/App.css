@@ -4,7 +4,7 @@
 }
 
 .container {
-  height: 1200px;
+  height: 700px;
   background-image: url(../../images/redmovie.jpeg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -31,7 +31,7 @@ main {
 }
 
 main form {
-  margin-top: 100px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   width: 250px;
