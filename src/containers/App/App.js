@@ -28,11 +28,15 @@ fetchMovies= async ()=>{
 }
 
   render() {
-   console.log(this.state.movies)
+    const movies = this.state
+    const displayMovies = movies.length && movies.map(movie => {
+     return <img alt='Movie posters for current top movies' src={movie.posterImage} />
+   })
     return (
       <div className="App">
       <h1>
         Movie-Tracker
+        {displayMovies}
       </h1>
       </div>
     );
