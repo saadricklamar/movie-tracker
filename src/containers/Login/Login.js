@@ -52,3 +52,14 @@ class Login extends Component {
 }
 
 export default Login;
+
+//fetch method for database
+//method of post 
+//body which  is taking in email and password
+//post localhost api user from repo in postman 
+//add head of content type
+//add in bocy which is object of password and email 
+//return that specific user
+//under users in the repo (sign in/create account/addfavorite/receiveallfavorites/deleteafavorite)
+//to grab do a fetch request then set an error
+//set fetch request onclick 
