@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 // import { connect } from 'react-redux';
 import { login } from '../../actions/';
+import { Redirect } from 'react-router-dom'
 import './Login.scss';
 
 class Login extends Component {
@@ -10,6 +11,7 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
+            response: null,
             incorrectUserInfo: false,
             validUser: false
         }
@@ -21,14 +23,39 @@ class Login extends Component {
     }
 
     handleSubmit = (e) => {
+        e.preventDefault();
         const { email, password} = this.state;
-        //thunk lesson on Friday
-        //how to put user info into database
+        this.signUserIn(email,password);
     }
 
+    signUserIn = () => {
+      const {email, password} = this.state
+      const url = 'http://localhost:3000/api/users/'
+      const options = {
+        method: 'POST',
+        body: JSON.stringify({
+          email,
+          password
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      fetch(url, options)
+      .then(response => this.setState({response: response.status}))
+      .catch(error => console.log('error', error))
+    }
+
+
     render() {
-        //if this.state.validUser is true, then 
-        // redirect to movie/tracker home page
+      console.log(this.state.response)
+        if(this.state.response === 200) {
+          return (
+            <Redirect to='/MovieContainer' />
+          )
+        } else if (this.state.response === 500) {
+          return (<p>Get your shit together! This is not a valid login</p>)
+        }
         return(
             <div className='App'>
             <section className='container'>

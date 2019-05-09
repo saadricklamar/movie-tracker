@@ -10,6 +10,7 @@ class Signup extends Component {
             email: '',
             password: '',
             status: '',
+            validUser: false,
 
 
         }
@@ -46,7 +47,7 @@ class Signup extends Component {
         }
         fetch(url, options)
         .catch(error => console.log(error));
-        this.setState()
+        
       }
 
     render(){
