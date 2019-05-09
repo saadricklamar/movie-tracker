@@ -34,8 +34,8 @@ header {
   input {
     height: 35px;
     border: 2px solid #307F9F;
-    background: gray;
-    color: white;
+    background: #DAEBF7;
+    color: black;
     font-weight: bold;
     font-size: 14px;
     margin-top: 15px;
@@ -46,9 +46,10 @@ header {
   }
   
   input::placeholder {
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 14px;
+    padding-left: 5px;
   }
   
   .login {
@@ -64,7 +65,7 @@ header {
     height: 50px;
     cursor: pointer;
   }
-  
+
   p {
     color: #307F9F;
     font-size: 20px;

@@ -41,7 +41,9 @@ export class MovieContainer extends Component  {
     return (
     <section> 
         <header>
-        {/* <h1>Movie <i className="fas fa-film"></i> Tracker</h1> */}
+          {/* <section className='header-title'>
+            <h1 className='container-h1'>Movie <i className="fas fa-film"></i> Tracker</h1>
+          </section> */}
         <nav role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />
@@ -50,14 +52,18 @@ export class MovieContainer extends Component  {
                 <span></span>
             <ul id="menu">
               <a href="#"><li>Home</li></a>
+              <hr></hr>
               <a href="#"><li>Favorite</li></a>
+              <hr></hr>
               <a href="#"><li>About</li></a>
+              <hr></hr>
               <a href="#"><li>Sign Out</li></a>
+              <hr></hr>
             </ul>
           </div>
         </nav>
         </header>
-        {displayMovies}
+       <main className='movies'>{displayMovies}</main>
     </section>
         )
 }

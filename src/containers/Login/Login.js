@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 // import { connect } from 'react-redux';
 import { login } from '../../actions/';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import './Login.scss';
 
 class Login extends Component {
@@ -48,7 +48,6 @@ class Login extends Component {
 
 
     render() {
-      console.log(this.state.response)
         if(this.state.response === 200) {
           return (
             <Redirect to='/MovieContainer' />
@@ -68,7 +67,7 @@ class Login extends Component {
                 <input type= 'text' name='password' placeholder='Password' onChange={this.handleChange}></input>
                 <input type='submit' value='Login' className='login'></input>
                 <h2>Don't Have An Account?</h2>
-                <a href='blank'><p>Create An Account</p></a>
+                <Link className='form-link' to='/Signup'>Create An Account</Link>
               </form>
             </main>
             </section>
