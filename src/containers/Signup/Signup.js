@@ -32,7 +32,11 @@ class Signup extends Component {
 
     render(){
         return(
-            <div className='container'>
+            <div className='signup-container'>
+            <header>
+              <h1>Movie <i className="fas fa-film"></i> Tracker</h1>
+            </header>
+            <main>
             <form className='signup'>
                 <input
                 value={this.state.name}
@@ -58,6 +62,7 @@ class Signup extends Component {
                 />
                 <button onClick={this.addUser} className="create-account">Sign Up</button>
         </form>
+        </main>
       </div>
         )
     }

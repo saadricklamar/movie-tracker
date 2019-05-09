@@ -1,12 +1,12 @@
 
 a {
   text-decoration: none;
-  color: #232323;
+  color: white;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: tomato;
+  color: red;
 }
 
 #menuToggle {
@@ -58,7 +58,7 @@ a:hover {
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background: white;
 }
 
 #menuToggle input:checked ~ span:nth-last-child(3) {
@@ -72,11 +72,11 @@ a:hover {
 
 #menu {
   position: absolute;
-  width: 300px;
+  width: 200px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  background: #ededed;
+  background: hsla(197, 54%, 41%, 1);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
@@ -92,3 +92,12 @@ a:hover {
 #menuToggle input:checked ~ ul {
   transform: none;
 }
+
+// header {
+//   display: flex;
+//   justify-content: flex-start;
+// }
+
+// h1 {
+  
+// }

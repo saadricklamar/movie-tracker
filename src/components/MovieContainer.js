@@ -2,11 +2,13 @@ import React from 'react';
 import './MovieContainer.scss';
 
 const MovieContainer = (props) => {
-    const displayMovies = props.movies.length && props.movies.map(movie => {
-        return <img src={movie.posterImage} />
-    })
+    // const displayMovies = props.movies.length && props.movies.map(movie => {
+    //     return <img src={movie.posterImage} />
+    // })
     return (
     <section> 
+        <header>
+        {/* <h1>Movie <i className="fas fa-film"></i> Tracker</h1> */}
         <nav role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />
@@ -15,15 +17,13 @@ const MovieContainer = (props) => {
                 <span></span>
             <ul id="menu">
               <a href="#"><li>Home</li></a>
-              <a href="#"><li>About</li></a>
               <a href="#"><li>Favorite</li></a>
+              <a href="#"><li>About</li></a>
               <a href="#"><li>Sign Out</li></a>
-              <a href="#"><li>Watched</li></a>
             </ul>
           </div>
         </nav>
-        <div>
-        </div> 
+        </header>
     </section>
         )
 }
