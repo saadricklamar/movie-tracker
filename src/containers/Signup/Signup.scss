@@ -12,10 +12,27 @@
         cursor: pointer;
 }
 
-.signup {
-    justify-content: center;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-  }
+main {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+}
+      
+main form {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+}
+
+header {
+    padding-top: 50px;
+        color: white;
+        font-family: Anton;
+}
+      
+h1 {
+        margin: 0 auto 25px auto;
+        font-size: 100px;
+        color: #307F9F;
+}

@@ -6,7 +6,7 @@ import {cleanMovieData} from '../../util/helpers.js';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import MovieContainer from '../../components/MovieContainer';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 
 
@@ -39,10 +39,12 @@ fetchMovies= async ()=>{
   //  })
     return (
       <div className='App'>
-        <Login />
-        <MovieContainer movies={this.state.movies}/>
-        <Signup />
-        {/* {displayMovies} */}
+        <Switch>
+          <Route exact path='/' component={Login} />
+          <Route path='/Signup' component={Signup} />
+          <Route path='/MovieContainer' component={MovieContainer} />
+          <Redirect to='/' />
+        </Switch>
       </div>
     );
   }
