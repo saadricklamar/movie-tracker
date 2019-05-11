@@ -20,7 +20,7 @@ export class MovieContainer extends Component  {
     }
 
     componentDidMount(){
-      this.props.fetchMovies()
+      // this.props.fetchMovies()
     }
     
     fetchMovies= async ()=>{
