@@ -41,9 +41,9 @@ export class MovieContainer extends Component  {
     return (
     <section> 
         <header>
-          {/* <section className='header-title'>
+          <section className='header-title'>
             <h1 className='container-h1'>Movie <i className="fas fa-film"></i> Tracker</h1>
-          </section> */}
+          </section>
         <nav role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />
