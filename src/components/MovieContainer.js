@@ -6,6 +6,8 @@ import {key} from '../util/key';
 import {cleanMovieData} from '../util/helpers';
 import { connect } from 'react-redux';
 
+
+
 export class MovieContainer extends Component  {
     constructor() {
       super() 
@@ -18,7 +20,7 @@ export class MovieContainer extends Component  {
     }
 
     componentDidMount(){
-      this.fetchMovies()
+      this.props.fetchMovies()
     }
     
     fetchMovies= async ()=>{
