@@ -1,7 +1,7 @@
 import * as actions from './index';
 
 describe('actions', () => {
-    it('should return a type of ADD_TODO with a movie ', () => {
+    it('should return a type of LOAD_MOVIES with a movie ', () => {
 
         const movies = [{ title: 'The Avengers'}];
         const expected = {

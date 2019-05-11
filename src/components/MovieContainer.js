@@ -5,6 +5,9 @@ import {fetchData} from '../util/fetchData';
 import {key} from '../util/key';
 import {cleanMovieData} from '../util/helpers';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Login from '../containers/Login/Login';
+
 
 
 
@@ -36,10 +39,10 @@ export class MovieContainer extends Component  {
 
 
   render() {
-    const {movies} = this.state
-    const displayMovies = movies.length && movies.map(movie => {
-        return <img src={movie.posterImage} />
-    })
+    const {movies, user} = this.props
+    // const displayMovies = movies.length && movies.map(movie => {
+    //     return <img src={movie.posterImage} />
+    // })
     return (
     <section> 
         <header>
@@ -53,33 +56,36 @@ export class MovieContainer extends Component  {
                 <span></span>
                 <span></span>
             <ul id="menu">
+              {/* <h4></h4> */}
               <a href="#"><li>Home</li></a>
               <hr></hr>
               <a href="#"><li>Favorite</li></a>
               <hr></hr>
               <a href="#"><li>About</li></a>
               <hr></hr>
-              <a href="#"><li>Sign Out</li></a>
+              <Link to='/Login'>
+              <a href="#" onClick={signOut}><li>Sign Out</li></a>
+              </Link>
               <hr></hr>
             </ul>
           </div>
         </nav>
         </header>
-       <main className='movies'>{displayMovies}</main>
+       <main className='movies'></main>
     </section>
         )
 }
 }
 export const mapStateToProps = (state) => ({
-  movies: state.movies
+  // movies: state.movies
   // user_id: state.user.id,
   // isLoading: state.isLoading,
   // user: state.user
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  // signOut: () => dispatch(signOut())
+  signOut: () => dispatch(signOut())
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(MovieContainer);
+export default connect(null,mapDispatchToProps)(MovieContainer);
 
