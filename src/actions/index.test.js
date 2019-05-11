@@ -37,12 +37,12 @@ describe('actions', () => {
     });
 
   it('should return a type of LOADING with favorites', () => {
-    const favorites = []
+    const bool = []
     const expected = {
       type: 'IS_LOADING',
-      favorites
+      bool
     }
-    const result = actions.loading(favorites)
+    const result = actions.loading(bool)
     expect(result).toEqual(expected)
   })
 
