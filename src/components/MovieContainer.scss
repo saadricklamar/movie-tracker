@@ -1,4 +1,3 @@
-
 a {
   text-decoration: none;
   color: white;
@@ -13,7 +12,7 @@ a:hover {
   display: block;
   position: relative;
   top: 50px;
-  left: 50px;
+  right: 650px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -72,7 +71,8 @@ a:hover {
 
 #menu {
   position: absolute;
-  width: 200px;
+  height: 1050px;
+  width: 150px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
@@ -82,22 +82,40 @@ a:hover {
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
 }
 
 #menu li {
-  padding: 10px 0;
-  font-size: 22px;
+  padding: 20px 0;
+  font-size: 30px;
+  margin-right: 25px;
 }
 
 #menuToggle input:checked ~ ul {
   transform: none;
 }
 
-// header {
-//   display: flex;
-//   justify-content: flex-start;
-// }
+header {
+  padding: 0;
+  display:flex;
+}
 
-// h1 {
-  
-// }
+.header-title h1 {
+  margin: 0 auto;
+}
+
+.movies {
+  margin-top: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main img {
+  flex-wrap: wrap;
+}
+
+hr {
+  color: white;
+  width: 100px;
+  margin-left: 18px;
+}
