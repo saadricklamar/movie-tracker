@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './MovieContainer.scss';
-import { signOut } from '../actions/';
-import {key} from '../util/key';
+import { signOut } from '../../actions';
+import {key} from '../../util/key';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {fetchMovies} from '../thunks/fetchMovieThunk';
+import {fetchMovies} from '../../thunks/fetchMovieThunk';
+import MovieCard from '../MovieCard/MovieCard';
 
 
 export class MovieContainer extends Component  {
@@ -17,7 +18,7 @@ export class MovieContainer extends Component  {
     }
 
     componentDidMount = async () => {
-      const url= `https://api.themoviedb.org/3/discover/movie?api_key=${key}&/discover/movie?primary_release_year=2010&sort_by=vote_average.desc`;
+      const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&sort_by=popularity.desc`;
       await this.props.loadMovies(url);
     }
 
@@ -54,7 +55,8 @@ export class MovieContainer extends Component  {
        <main className='movies'>{
          movies.map(movie => {
           return (
-            <img src={movie.posterImage}/>
+            <MovieCard movie={movie} key={movie.id}/>
+            // <img src={movie.posterImage}/>
           )
          })
         }

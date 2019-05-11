@@ -52,9 +52,6 @@ class Signup extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.createUser();
-        // this.refs.name.value = '';
-        // this.refs.email.value = '';
-        // this.refs.password.value = '';
     }
 
     createUser = async () => {
