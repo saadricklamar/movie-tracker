@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Signup.scss';
+import { addUser } from '../../util/fetchData';
+import { Redirect } from 'react-router-dom'
 
 class Signup extends Component {
     //extends signin? 
@@ -11,46 +13,70 @@ class Signup extends Component {
             password: '',
             status: '',
             validUser: false,
+            formCompleted: false,
+            validEmail: false,
+            duplicateUser: false,
+            error: ''
 
 
         }
     }
+
+
+    validateEmail = (email) => {
+      var exp = /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+      var reg = new RegExp(exp);
+      var emailInput = email;
+      if (emailInput.match(reg)) {
+        return true
+      } else {
+        return false;
+      }
+    }
+
     handleChange = (e) =>{
         const {name, value} = e.target
         this.setState({
             [name]: value
         })
+        this.checkFormCompleted();
+    }
+
+    checkFormCompleted () {
+      const { name, email, password} = this.state;
+      if(name !== '' && email !== '' && password !== '') {
+        this.setState({formCompleted: true})
+      }
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const {name} = e.target
         this.createUser();
-        this.refs.name.value = '';
-        this.refs.email.value = '';
-        this.refs.password.value = '';
+        // this.refs.name.value = '';
+        // this.refs.email.value = '';
+        // this.refs.password.value = '';
     }
 
-    createUser = (state) => {
+    createUser = async () => {
         const {name, email, password} = this.state
-        const url = 'http://localhost:3000/api/users/new'
-        const options = {
-          method: 'POST',
-          body: JSON.stringify({
-            name,
-            email,
-            password
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          }
+        const emailValue = email;
+        if(!this.validateEmail(emailValue)) {
+          this.setState({validEmail: false, duplicateUser: false})
+          return
         }
-        fetch(url, options)
-        .catch(error => console.log(error));
-        
-      }
+        const data = await addUser({name, email, password});
+        if(data.error) {
+          this.setState({validEmail: true, duplicateUser: true, error: 'Email already in use'})
+        } else {
+          this.setState({validUser: true})
+        }
+  }
+
 
     render(){
+      if(this.state.validUser) {
+        return <Redirect to='/Login'/>
+      }
         return(
             <div className='signup-container'>
             <header>
@@ -83,7 +109,8 @@ class Signup extends Component {
                     className="input"
                     ref='password'
                 />
-                <button onClick={this.addUser} className="create-account">Sign Up</button>
+                <h3>{this.state.error}</h3>
+                <button className="create-account">Sign Up</button>
         </form>
         </main>
       </div>
