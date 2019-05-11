@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-// import { connect } from 'react-redux';
-import { login } from '../../actions/';
-import { Redirect, Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Redirect, Link } from 'react-router-dom';
+import { signUserIn } from '../../thunks/signUserIn';
 import './Login.scss';
 
-class Login extends Component {
+export class Login extends Component {
     constructor() {
         super()
         this.state = {
@@ -22,39 +22,42 @@ class Login extends Component {
         this.setState({[name]: value});
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         const { email, password} = this.state;
-        this.signUserIn(email,password);
+        const signInAttempt = await this.props.signUserIn({email,password});
+        if(signInAttempt !== undefined) {
+          this.setState({inncorrectUserInfo: true})
+        } else {
+          this.setState({validUser: true})
+        }
     }
 
-    signUserIn = () => {
-      const {email, password} = this.state
-      const url = 'http://localhost:3000/api/users/'
-      const options = {
-        method: 'POST',
-        body: JSON.stringify({
-          email,
-          password
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-      fetch(url, options)
-      .then(response => this.setState({response: response.status}))
-      .catch(error => console.log('error', error))
-    }
+    // signUserIn = () => {
+    //   const {email, password} = this.state
+    //   const url = 'http://localhost:3000/api/users/'
+    //   const options = {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //       email,
+    //       password
+    //     }),
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   }
+    //   fetch(url, options)
+    //   .then(response => this.setState({response: response.status}))
+    //   .catch(error => console.log('error', error))
+    // }
 
 
     render() {
-        if(this.state.response === 200) {
+        if(this.state.validUser) {
           return (
-            <Redirect to='/MovieContainer' />
+            <Redirect to='/MovieContainer'/>
           )
-        } else if (this.state.response === 500) {
-          return (<p>Get your shit together! This is not a valid login</p>)
-        }
+        } 
         return(
             <div className='App'>
             <section className='container'>
@@ -78,4 +81,9 @@ class Login extends Component {
 
 }
 
-export default Login;
+export const mapDispatchToProps = (dispatch) => ({
+  signUserIn: (user) => dispatch(signUserIn(user))
+})
+
+export default connect(null, mapDispatchToProps)(Login)
+// export default Login;
