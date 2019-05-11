@@ -34,6 +34,7 @@ export class MovieContainer extends Component  {
 
 
   render() {
+    console.log(this.props['user'])
     console.log(this.props.movies)
     const {movies} = this.props
     // const displayMovies = movies.length && movies.map(movie => {
@@ -52,7 +53,7 @@ export class MovieContainer extends Component  {
                 <span></span>
                 <span></span>
             <ul id="menu">
-              {/* <h4></h4> */}
+              <h4 className="user-name">{this.props['user'].name}</h4>
               <a href="#"><li>Home</li></a>
               <hr></hr>
               <a href="#"><li>Favorite</li></a>
@@ -82,10 +83,10 @@ export class MovieContainer extends Component  {
 }
 
 export const mapStateToProps = (state) => ({
-  movies: state.movies
+  movies: state.movies,
   // user_id: state.user.id,
   // isLoading: state.isLoading,
-  // user: state.user
+  user: state.users
 })
 
 export const mapDispatchToProps = (dispatch) => ({
