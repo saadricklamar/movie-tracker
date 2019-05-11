@@ -11,7 +11,6 @@ export class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            response: null,
             incorrectUserInfo: false,
             validUser: false,
             error: ''
@@ -36,7 +35,7 @@ export class Login extends Component {
     }
 
     render() {
-        const { email, password, incorrectUserInfo} = this.state;
+        const { email, password, incorrectUserInfo, error} = this.state;
         if(this.state.validUser) {
           return (
             <Redirect to='/MovieContainer'/>
@@ -52,7 +51,7 @@ export class Login extends Component {
               <form onSubmit={this.handleSubmit}>
                 <input type='text' name='email' placeholder='Email' onChange={this.handleChange}></input>
                 <input type= 'text' name='password' placeholder='Password' onChange={this.handleChange}></input>
-                <h3 className='incorrect-user-info'>{this.state.error}</h3>
+                <h3 className='incorrect-user-info'>{error}</h3>
                 <input type='submit' value='Login' className='login'></input>
                 <h2>Don't Have An Account?</h2>
                 <Link className='form-link' to='/Signup'>Create An Account</Link>

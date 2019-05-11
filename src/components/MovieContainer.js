@@ -1,45 +1,41 @@
 import React, { Component } from 'react';
 import './MovieContainer.scss';
 import { signOut } from '../actions/';
-import {fetchData} from '../util/fetchData';
 import {key} from '../util/key';
-import {cleanMovieData} from '../util/helpers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Login from '../containers/Login/Login';
-
-
+import {fetchMovies} from '../thunks/fetchMovieThunk';
 
 
 export class MovieContainer extends Component  {
     constructor() {
       super() 
       this.state = {
-        movies: [],
-        // favoriteMovies: [],
-        // favorites: '',
+       
       }
 
     }
 
-    componentDidMount(){
-      // this.props.fetchMovies()
+    componentDidMount = async () => {
+      const url= `https://api.themoviedb.org/3/discover/movie?api_key=${key}&/discover/movie?primary_release_year=2010&sort_by=vote_average.desc`;
+      await this.props.loadMovies(url);
     }
     
-    fetchMovies= async ()=>{
-      const url= `https://api.themoviedb.org/3/discover/movie?api_key=${key}&/discover/movie?primary_release_year=2010&sort_by=vote_average.desc`;
-      fetchData(url)
-      let response = await fetchData(url)
-      let movies = cleanMovieData(response)
-      this.setState({
-        movies
-      })
-    }
+    // fetchMovies= async ()=>{
+    //   const url= `https://api.themoviedb.org/3/discover/movie?api_key=${key}&/discover/movie?primary_release_year=2010&sort_by=vote_average.desc`;
+    //   fetchData(url)
+    //   let response = await fetchData(url)
+    //   let movies = cleanMovieData(response)
+    //   this.setState({
+    //     movies
+    //   })
+    // }
     
 
 
   render() {
-    const {movies, user} = this.props
+    console.log(this.props.movies)
+    const {movies} = this.props
     // const displayMovies = movies.length && movies.map(movie => {
     //     return <img src={movie.posterImage} />
     // })
@@ -71,21 +67,31 @@ export class MovieContainer extends Component  {
           </div>
         </nav>
         </header>
-       <main className='movies'></main>
+       <main className='movies'>{
+         movies.map(movie => {
+          return (
+            <img src={movie.posterImage}/>
+          )
+         })
+        }
+       
+       </main>
     </section>
         )
 }
 }
+
 export const mapStateToProps = (state) => ({
-  // movies: state.movies
+  movies: state.movies
   // user_id: state.user.id,
   // isLoading: state.isLoading,
   // user: state.user
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  signOut: () => dispatch(signOut())
+  signOut: () => dispatch(signOut()),
+  loadMovies: (url) => dispatch(fetchMovies(url))
 })
 
-export default connect(null,mapDispatchToProps)(MovieContainer);
+export default connect(mapStateToProps,mapDispatchToProps)(MovieContainer);
 
