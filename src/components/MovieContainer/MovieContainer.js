@@ -56,7 +56,6 @@ export class MovieContainer extends Component  {
          movies.map(movie => {
           return (
             <MovieCard movie={movie} key={movie.id}/>
-            // <img src={movie.posterImage}/>
           )
          })
         }
