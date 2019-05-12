@@ -17,11 +17,12 @@ export default class MovieCard extends Component {
   render() {
       return(
           <article className='movie-card' style={{ backgroundImage: `url(${this.props.movie.posterImage})` }}>
-              {/* <img src={this.props.movie.posterImage}/> */}
-              {/* <p>{this.props.movie.title}</p>
-              <p>{this.props.movie.rating}</p>
-              <p>{this.props.movie.releaseDate}</p>
-              <p>{this.props.movie.synopsis}</p> */}
+              <div className='info'>
+                <p>{this.props.movie.title}</p>
+                <p>Rating: {this.props.movie.rating}</p>
+                <p>Release: {this.props.movie.releaseDate}</p>
+                <p>Summary: {this.props.movie.synopsis}</p>
+              </div>
           </article>
       )
   }
