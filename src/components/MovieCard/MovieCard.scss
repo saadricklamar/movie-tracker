@@ -15,7 +15,7 @@
 	position: relative;
   display: flex;
   cursor: pointer;
-	align-items: flex-end;
+	align-items: flex-start;
 	transition: 0.4s ease-out;
 	box-shadow: 0px 7px 10px rgba(black, 0.5);
 	&:hover {
@@ -23,4 +23,13 @@
   }	&:before {
 			opacity: 1;
   }	
+}
+
+.fa-star {
+  color: white;
+  font-size: 25px;
+}
+
+.fa-star:hover {
+  color: gold;
 }

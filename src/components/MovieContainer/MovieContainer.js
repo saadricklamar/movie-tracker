@@ -6,20 +6,37 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {fetchMovies} from '../../thunks/fetchMovieThunk';
 import MovieCard from '../MovieCard/MovieCard';
+import { getFavorites } from '../../util/fetchData';
+import {uid} from 'react-uid';
 
 
 export class MovieContainer extends Component  {
     constructor() {
       super() 
       this.state = {
-       
+       favorites: '',
+       favoriteMovies: []
       }
 
     }
 
     componentDidMount = async () => {
       const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&sort_by=popularity.desc`;
+      const favoriteMovies = await getFavorites(this.props.user_id)
+      this.setState({favoriteMovies: favoriteMovies.data})
       await this.props.loadMovies(url);
+    }
+
+    toggleFavorites = async () => {
+      let current = ''
+      const favoriteMovies = await getFavorites(this.props.user_id)
+      if(!this.state.favorites) {
+        current = 'favorites'
+      }
+      this.setState({
+        favorites: current,
+        favoriteMovies: favoriteMovies.data
+      })
     }
 
   render() {
@@ -38,14 +55,16 @@ export class MovieContainer extends Component  {
                 <span></span>   
             <ul id="menu">
             <h4 className="user-name">Welcome, {this.props['user'].name}</h4>
-              <a href="#"><li>Home</li></a>
+              <li>Home</li>
               <hr></hr>
-              <a href="#"><li>Favorite</li></a>
+              <Link to='/favorites'>
+                <li>Favorite</li>
+              </Link>
               <hr></hr>
-              <a href="#"><li>About</li></a>
+                <li>About</li>
               <hr></hr>
               <Link to='/Login'>
-              <a href="#" onClick={signOut}><li>Sign Out</li></a>
+                <li onClick={signOut}>Sign Out</li>
               </Link>
               <hr></hr>
             </ul>
@@ -55,7 +74,7 @@ export class MovieContainer extends Component  {
        <main className='movies'>{
          movies.map(movie => {
           return (
-            <MovieCard movie={movie} key={movie.id}/>
+            <MovieCard movie={movie} key={uid(movie)}/>
           )
          })
         }
@@ -68,7 +87,7 @@ export class MovieContainer extends Component  {
 
 export const mapStateToProps = (state) => ({
   movies: state.movies,
-  // user_id: state.user.id,
+  user_id: state.users.id,
   // isLoading: state.isLoading,
   user: state.users
 })
