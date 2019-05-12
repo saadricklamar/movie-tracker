@@ -18,4 +18,7 @@ export const signUserIn = (user) => {
     }
     
 }
+
+//set to empty global object 
+//override user data state with empty data
    
