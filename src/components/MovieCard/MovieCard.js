@@ -44,20 +44,21 @@ export class MovieCard extends Component {
     this.setState({favorite: !this.state.favorite})
   }
 
-
-
-
   render() {
       return(
-          <article className='movie-card' style={{ backgroundImage: `url(${this.props.movie.poster_path})` }}>
-              <i onClick={this.toggleMovieFavorite} className={`fas fa-star ${this.state.favorite && 'favorite'}`}></i>
-              <div className='info'>
-                <p>{this.props.movie.title}</p>
-                <p>Rating: {this.props.movie.vote_average}</p>
-                <p>Release: {this.props.movie.release_date}</p>
-                <p>Summary: {this.props.movie.overview}</p>
+          <div className='movie-card'>
+             <div className='card'>
+              <div className='front' style={{ backgroundImage: `url(${this.props.movie.poster_path})` }}>
               </div>
-          </article>
+              <div className='back'>
+                <i onClick={this.toggleMovieFavorite} className={`fas fa-star ${this.state.favorite && 'favorite'}`}></i>
+                <p className='title'>{this.props.movie.title}</p>
+                <p className='rating'>Rating: {this.props.movie.vote_average}</p>
+                <p className='release'> Release: {this.props.movie.release_date}</p>
+                <p className='overview'>Summary: {this.props.movie.overview}</p>
+              </div>
+            </div> 
+          </div>
       )
   }
 }
