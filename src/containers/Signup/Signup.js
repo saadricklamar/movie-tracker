@@ -17,8 +17,6 @@ class Signup extends Component {
             validEmail: false,
             duplicateUser: false,
             error: ''
-
-
         }
     }
 

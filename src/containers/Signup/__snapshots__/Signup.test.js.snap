@@ -1,103 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Signup should match the snapshot 1`] = `
-<div
-  className="signup-container"
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
 >
-  <header>
-    <h1>
-      Movie 
-      <i
-        className="fas fa-film"
-      />
-       Tracker
-    </h1>
-  </header>
-  <main>
-    <form
-      className="signup"
-      onSubmit={[Function]}
-    >
-      <input
-        className="input"
-        name="name"
-        onChange={[Function]}
-        placeholder="Your Name"
-        value=""
-      />
-      <input
-        className="input"
-        name="email"
-        onChange={[Function]}
-        placeholder="Email"
-        value=""
-      />
-      <input
-        className="input"
-        name="password"
-        onChange={[Function]}
-        placeholder="Password"
-        type="password"
-        value=""
-      />
-      <h3 />
-      <button
-        className="create-account"
-      >
-        Sign Up
-      </button>
-    </form>
-  </main>
-</div>
+  <Signup />
+</ContextProvider>
 `;
 
 exports[`Signup should match the snapshot if it renders the redirect 1`] = `
-<div
-  className="signup-container"
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+      "validUser": true,
+    }
+  }
 >
-  <header>
-    <h1>
-      Movie 
-      <i
-        className="fas fa-film"
-      />
-       Tracker
-    </h1>
-  </header>
-  <main>
-    <form
-      className="signup"
-      onSubmit={[Function]}
-    >
-      <input
-        className="input"
-        name="name"
-        onChange={[Function]}
-        placeholder="Your Name"
-        value=""
-      />
-      <input
-        className="input"
-        name="email"
-        onChange={[Function]}
-        placeholder="Email"
-        value=""
-      />
-      <input
-        className="input"
-        name="password"
-        onChange={[Function]}
-        placeholder="Password"
-        type="password"
-        value=""
-      />
-      <h3 />
-      <button
-        className="create-account"
-      >
-        Sign Up
-      </button>
-    </form>
-  </main>
-</div>
+  <Signup />
+</ContextProvider>
 `;
