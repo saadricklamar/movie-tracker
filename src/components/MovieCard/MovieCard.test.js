@@ -1,15 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { MovieCard } from "./MovieCard";
-import { shallow, mount, render } from "enzyme";
-import { mapStateToProps } from "./MovieCard";
-import * as actions from "../../util/fetchData";
-import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {MovieCard} from './MovieCard';
+import { shallow, mount, render } from 'enzyme';
+import {mapStateToProps} from  './MovieCard'
+import * as actions from '../../util/fetchData';
+import { Provider } from 'react-redux';
 
-jest.mock("../../util/fetchData");
-const mockStore = configureMockStore();
-const store = mockStore({});
+jest.mock('../../util/fetchData')
+
 
 describe("MovieCard", () => {
   let wrapper;

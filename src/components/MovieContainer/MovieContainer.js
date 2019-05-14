@@ -49,35 +49,33 @@ export class MovieContainer extends Component {
               Movie <i className="fas fa-film" /> Tracker
             </h1>
           </section>
-          <nav role="navigation">
-            <div id="menuToggle">
-              <input type="checkbox" />
-              <span />
-              <span />
-              <span />
-              <ul id="menu">
-                <h4 className="user-name">
-                  Welcome, {this.props["user"].name}
-                </h4>
-                <Link to="/MovieContainer">
-                  <li onClick={this.toggleHomeDisplay}>Home</li>
-                </Link>
-                <hr />
-                <Link to="MovieContainer/favorites">
-                  <li onClick={this.toggleFavoritesDisplay}>Favorites</li>
-                </Link>
-                <hr />
-                <Link>
-                  <li>About</li>
-                </Link>
-                <hr />
-                <Link to="/Login">
-                  <li onClick={signOut}>Sign Out</li>
-                </Link>
-                <hr />
-              </ul>
-            </div>
-          </nav>
+        <nav role='navigation'>
+          <div id='menuToggle'> 
+            <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>   
+            <ul id='menu'>
+            <h4 className='user-name'>Welcome, {this.props.user.name}</h4>
+              <Link to='/MovieContainer'>
+                <li onClick={this.toggleHomeDisplay}>Home</li>
+              </Link>
+                <hr></hr>
+              <Link to='MovieContainer/favorites'>
+                <li onClick={this.toggleFavoritesDisplay}>Favorites</li>
+              </Link>
+                <hr></hr>
+              <Link to=''>
+                <li>About</li>
+              </Link>
+                <hr></hr>
+              <Link to='/Login'>
+                <li onClick={signOut}>Sign Out</li>
+              </Link>
+                <hr></hr>
+            </ul>
+          </div>
+        </nav>
         </header>
         {!favorites && (
           <main className="movies">
