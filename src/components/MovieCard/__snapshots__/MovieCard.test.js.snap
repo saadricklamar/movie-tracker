@@ -32,6 +32,7 @@ exports[`MovieCard MovieCard should match the snapshot 1`] = `
       >
         Rating: 
         10
+         / 10
       </p>
       <p
         className="release"
@@ -40,7 +41,7 @@ exports[`MovieCard MovieCard should match the snapshot 1`] = `
         2019
       </p>
       <p
-        className="overview"
+        className="overview scroller"
       >
         Summary: 
         a darn good movie

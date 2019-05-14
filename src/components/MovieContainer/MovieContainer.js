@@ -57,7 +57,7 @@ export class MovieContainer extends Component  {
                 <span></span>
                 <span></span>   
             <ul id='menu'>
-            <h4 className='user-name'>Welcome, {this.props['user'].name}</h4>
+            <h4 className='user-name'>Welcome, {this.props.user.name}</h4>
               <Link to='/MovieContainer'>
                 <li onClick={this.toggleHomeDisplay}>Home</li>
               </Link>
@@ -66,7 +66,7 @@ export class MovieContainer extends Component  {
                 <li onClick={this.toggleFavoritesDisplay}>Favorites</li>
               </Link>
                 <hr></hr>
-              <Link>
+              <Link to=''>
                 <li>About</li>
               </Link>
                 <hr></hr>

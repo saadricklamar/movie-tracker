@@ -5,14 +5,10 @@ import {shallow} from 'enzyme';
 import {validateEmail} from './Signup';
 import { addUser } from '../../util/fetchData';
 import { Provider } from 'react-redux';
-//npm i redux-mock-store
-import configureMockStore from 'redux-mock-store'
 
 
 jest.mock('../../util/fetchData')
 
-const mockStore = configureMockStore();
-// const store = mockStore({});
 const mockChangeEvent = {
   target: {
     name:'name',

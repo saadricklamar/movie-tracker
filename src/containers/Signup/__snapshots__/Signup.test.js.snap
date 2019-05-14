@@ -40,12 +40,23 @@ exports[`Signup should match the snapshot 1`] = `
         type="password"
         value=""
       />
-      <h3 />
+      <h3
+        className="email-in-use"
+      />
       <button
         className="create-account"
       >
         Sign Up
       </button>
+      <Link
+        to="/"
+      >
+        <button
+          className="return-login"
+        >
+          Return To Login
+        </button>
+      </Link>
     </form>
   </main>
 </div>
@@ -91,12 +102,23 @@ exports[`Signup should match the snapshot if it renders the redirect 1`] = `
         type="password"
         value=""
       />
-      <h3 />
+      <h3
+        className="email-in-use"
+      />
       <button
         className="create-account"
       >
         Sign Up
       </button>
+      <Link
+        to="/"
+      >
+        <button
+          className="return-login"
+        >
+          Return To Login
+        </button>
+      </Link>
     </form>
   </main>
 </div>
