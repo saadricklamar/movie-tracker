@@ -8,6 +8,8 @@ import { mapStateToProps, mapDispatchToProps } from './MovieContainer'
 // jest.mock('../../utils/apiCalls')
 // jest.mock('../../thunks/fetchMovies')
 
+
+
 describe("MovieContainer", () => {
   let wrapper;
   let mockEvent;
