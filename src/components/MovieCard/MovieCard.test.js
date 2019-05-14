@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MovieCard from './MovieCard';
+import {MovieCard} from './MovieCard';
 import { shallow, mount, render } from 'enzyme';
 import {mapStateToProps} from './MovieCard'
 import * as actions from '../../util/fetchData';
@@ -29,9 +29,7 @@ describe('MovieCard', () => {
 
       }
       wrapper = enzyme.shallow(
-        <Provider store={store}>
         <MovieCard movie={mockMovie} user_id={1}/>
-        </Provider>
       );
   
     })
@@ -43,22 +41,22 @@ describe('MovieCard', () => {
       });
 
       describe('ComponentDidMount', () => {
-        it.skip('should call getFavorites on componentDidMount', async () => {
+        it('should call getFavorites on componentDidMount', async () => {
           actions.getFavorites.mockImplementation(() => ({data: [mockMovie]}))
-          wrapper = shallow(<Provider store={store}><MovieCard movie={mockMovie} user_id={1}/></Provider>, { disableLifecycleMethods: true })
+          wrapper = shallow(<MovieCard movie={mockMovie} user_id={1}/>, { disableLifecycleMethods: true })
           await wrapper.instance().componentDidMount()
           expect(actions.getFavorites).toHaveBeenCalled()
         });
 
 
-        it.skip('set favorite to true if its a current favorite', async () => {
+        it('set favorite to true if its a current favorite', async () => {
           actions.getFavorites.mockImplementation(() => ({data: [{movie_id: 1}]}))
           wrapper = shallow(<MovieCard movie={mockMovie} user_id={1}/>, { disableLifecycleMethods: true })
           await wrapper.instance().componentDidMount()
           expect(wrapper.state().favorite).toBe(true)
         });
 
-        it.skip('set favorite to false if its a current favorite', async () => {
+        it('set favorite to false if its a current favorite', async () => {
           actions.getFavorites.mockImplementation(() => ({data: [{movie_id: 2}]}))
           wrapper = shallow(<MovieCard movie={mockMovie} user_id={1}/>, { disableLifecycleMethods: true })
           await wrapper.instance().componentDidMount()

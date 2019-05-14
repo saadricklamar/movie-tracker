@@ -1,52 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieCard MovieCard should match the snapshot 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "subscription": Subscription {
-        "handleChangeWrapper": [Function],
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": [Function],
-      },
-    }
-  }
+<div
+  className="movie-card"
 >
-  <ConnectFunction
-    movie={
-      Object {
-        "id": 1,
-        "overview": "a darn good movie",
-        "poster_path": undefined,
-        "release_date": 2019,
-        "title": "Avengers",
-        "vote_average": 10,
+  <div
+    className="card"
+  >
+    <div
+      className="front"
+      style={
+        Object {
+          "backgroundImage": "url(undefined)",
+        }
       }
-    }
-    user_id={1}
-  />
-</ContextProvider>
+    />
+    <div
+      className="back"
+    >
+      <i
+        className="fas fa-star false"
+        onClick={[Function]}
+      />
+      <p
+        className="title"
+      >
+        Avengers
+      </p>
+      <p
+        className="rating"
+      >
+        Rating: 
+        10
+      </p>
+      <p
+        className="release"
+      >
+         Release: 
+        2019
+      </p>
+      <p
+        className="overview"
+      >
+        Summary: 
+        a darn good movie
+      </p>
+    </div>
+  </div>
+</div>
 `;
