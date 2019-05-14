@@ -5,7 +5,7 @@ a {
 }
 
 a:hover {
-  color: #AF2E53;
+  color: #af2e53;
 }
 
 #menuToggle {
@@ -16,10 +16,7 @@ a:hover {
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
-  
 }
-
-
 
 #menuToggle input {
   display: block;
@@ -29,8 +26,8 @@ a:hover {
   top: -7px;
   left: -5px;
   cursor: pointer;
-  opacity: 0; 
-  z-index: 2; 
+  opacity: 0;
+  z-index: 2;
   -webkit-touch-callout: none;
 }
 
@@ -44,10 +41,8 @@ a:hover {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-             
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -85,8 +80,7 @@ a:hover {
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 #menu li {
@@ -101,7 +95,7 @@ a:hover {
 
 header {
   padding: 0;
-  display:flex;
+  display: flex;
 }
 
 .header-title {
@@ -135,7 +129,7 @@ hr {
   font-size: 20px;
   margin-right: 20px;
   font-weight: lighter;
-  font-family: 'Times-New-Roman'
+  font-family: "Times-New-Roman";
 }
 
 .none {

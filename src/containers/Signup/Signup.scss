@@ -1,51 +1,50 @@
 .create-account,
 .return-login {
-    background-color: #307F9F;
-    border: 0;
-    color: #FFFFFF;
-    font-size: 1.25em;
-    font-weight: normal;
-    margin: 1.5rem 0 0 0;
-    outline: none;
-    padding: .75rem 1rem;
-    width: 250px;
-    height: 50px;
-    cursor: pointer;
+  background-color: #307f9f;
+  border: 0;
+  color: #ffffff;
+  font-size: 1.25em;
+  font-weight: normal;
+  margin: 1.5rem 0 0 0;
+  outline: none;
+  padding: 0.75rem 1rem;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
 }
 
 .create-account:hover,
 .return-login:hover {
-    background-color: #9DDAF1;
-    color: black;
+  background-color: #9ddaf1;
+  color: black;
 }
 
 main {
-   display: flex;
-   justify-content: center;
-   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
-      
+
 main form {
-   margin-top: 40px;
-   display: flex;
-   flex-direction: column;
-   width: 250px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
 }
 
 header {
-    padding-top: 50px;
-    color: white;
-    font-family: Anton;
+  padding-top: 50px;
+  color: white;
+  font-family: Anton;
 }
-      
+
 h1 {
-    margin: 0 auto 25px auto;
-    font-size: 100px;
-    color: #307F9F;
+  margin: 0 auto 25px auto;
+  font-size: 100px;
+  color: #307f9f;
 }
 
 .email-in-use {
-    color: red;
-    margin-top: 10px;
+  color: red;
+  margin-top: 10px;
 }
-

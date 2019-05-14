@@ -4,8 +4,8 @@
   perspective: 1000px;
   padding: 1.5rem;
   cursor: pointer;
-	align-items: flex-start;
-	box-shadow: 0px 7px 10px rgba(black, 0.5);
+  align-items: flex-start;
+  box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
 
 .fa-star {
@@ -22,31 +22,31 @@
   color: gold;
 }
 
-
-.movie-card:hover .card, .movie-card.hover .card {
-		transform: rotateY(180deg);
-	}
-
-.movie-card, .front, .back {
-	width: 300px;
-	height: 400px;
+.movie-card:hover .card,
+.movie-card.hover .card {
+  transform: rotateY(180deg);
 }
 
+.movie-card,
+.front,
+.back {
+  width: 300px;
+  height: 400px;
+}
 
 .card {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-	position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
-
-.front, .back {
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
 
 .front {
   z-index: 2;
@@ -74,13 +74,13 @@
   padding: 5px;
   font-size: 13px;
   font-weight: bold;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .title,
 .rating,
 .release {
-  font-family: 'Poiret One';
+  font-family: "Poiret One";
   font-size: 20px;
   padding: 5px 10px 0 10px;
 }
@@ -89,4 +89,3 @@
   font-size: 24px;
   color: white;
 }
-

@@ -1,9 +1,10 @@
 const errorReducer = (state = false, action) => {
-    switch(action.type) {
-        case 'IS_ERROR':
-            return action.bool
-        default: return state;
-    }
-}
+  switch (action.type) {
+    case "IS_ERROR":
+      return action.bool;
+    default:
+      return state;
+  }
+};
 
-export default errorReducer
+export default errorReducer;
