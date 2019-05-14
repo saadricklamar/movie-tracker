@@ -84,6 +84,19 @@ it('should match the snapshot', () => {
 
     })
 
+    describe('checkFormCompleted', () => {
+      it('should set formCompleted to true if there are valid inputs', () => {
+        wrapper.state().name = 'Anon'
+        wrapper.state().email = 'bac@gmail.com'
+        wrapper.state().password = 'movvvaaayyys'
+
+        const expected = true
+        wrapper.instance().checkFormCompleted()
+        expect(wrapper.state().formCompleted).toEqual(expected)
+      })
+
+    })
+
   })
 
 })
