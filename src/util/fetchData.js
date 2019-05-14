@@ -24,7 +24,6 @@ export const addUser = async (user) => {
 }
    
 export const addFavorite = async (movie_id, user_id, movie) => {
-    console.log(user_id)
     const response = await fetch('http://localhost:3000/api/users/favorites/new', {
         method: 'POST',
         body: JSON.stringify({

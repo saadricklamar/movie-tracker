@@ -13,10 +13,8 @@ export class MovieCard extends Component {
   }
 
    componentDidMount = async () => { 
-    console.log(this.props.movie)
     const currentFavorites = await actions.getFavorites(this.props.user_id)
     const locatedFavorites = currentFavorites.data.find((favoriteMovie) => {
-      
       return favoriteMovie.movie_id === this.props.movie.movie_id || favoriteMovie.movie_id === this.props.movie.id
     })
     if (locatedFavorites) {
@@ -29,18 +27,14 @@ export class MovieCard extends Component {
   toggleMovieFavorite = async () => {
     let { movie, user_id } = this.props
     let movieID = movie.id
-    console.log(movie.id)
- 
     if (this.state.favorite) {
       movieID = movie.movie_id
     }
-    
     if(this.state.favorite) {
       await actions.deleteFavorite(user_id, movie.id)
     } else {
       await actions.addFavorite(movie.id, user_id, movie)
     }
-    
     this.setState({favorite: !this.state.favorite})
   }
 
@@ -53,9 +47,9 @@ export class MovieCard extends Component {
               <div className='back'>
                 <i onClick={this.toggleMovieFavorite} className={`fas fa-star ${this.state.favorite && 'favorite'}`}></i>
                 <p className='title'>{this.props.movie.title}</p>
-                <p className='rating'>Rating: {this.props.movie.vote_average}</p>
+                <p className='rating'>Rating: {this.props.movie.vote_average} / 10</p>
                 <p className='release'> Release: {this.props.movie.release_date}</p>
-                <p className='overview'>Summary: {this.props.movie.overview}</p>
+                <p className='overview scroller'>Summary: {this.props.movie.overview}</p>
               </div>
             </div> 
           </div>
