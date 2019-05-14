@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Signup from './Signup';
+import {Signup} from './Signup';
 import {shallow} from 'enzyme';
 import {validateEmail} from './Signup';
 import { addUser } from '../../util/fetchData';
@@ -12,7 +12,13 @@ import configureMockStore from 'redux-mock-store'
 jest.mock('../../util/fetchData')
 
 const mockStore = configureMockStore();
-const store = mockStore({});
+// const store = mockStore({});
+const mockChangeEvent = {
+  target: {
+    name:'name',
+    value: 'Anon'
+  }
+}
 
 beforeEach(() => {
   addUser.mockImplementation(() => ({error: false}))
@@ -23,7 +29,7 @@ describe('Signup', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-    <Provider store={store}><Signup /></Provider>)
+    <Signup />)
   })
 
 it('should match the snapshot', () => {
@@ -35,8 +41,9 @@ it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   });
 
-  it('should have a default state', () => {
-    const expected ={
+
+  it('should have a defult state', () => {
+    const mockDefaultState = {
       name: '',
       email: '',
       password: '',
@@ -46,9 +53,12 @@ it('should match the snapshot', () => {
       validEmail: false,
       duplicateUser: false,
       error: ''
-    }
-    expect(wrapper.state()).toEqual(expected)
-  })
+    };
+
+    wrapper = shallow(<Signup />, { disableLifecycleMethods: true });
+    expect(wrapper.state()).toEqual(mockDefaultState);
+  });
+
 
   describe('validateEmail', () => {
 
@@ -66,11 +76,9 @@ it('should match the snapshot', () => {
 
     describe('handleChange', () => {
 
-      const mockEvent = {target: {name: 'Anon', value: 'anon@gmail.com'}}
-
-      it.skip('should target and update the name in default state', () => {
+      it('should target and update the name in default state', () => {
         const expected = 'Anon'
-        wrapper.instance().handleChange(mockEvent)
+        wrapper.instance().handleChange(mockChangeEvent)
         expect(wrapper.state().name).toEqual(expected)
       });
 

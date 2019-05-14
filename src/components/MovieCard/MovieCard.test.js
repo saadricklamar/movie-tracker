@@ -4,8 +4,12 @@ import MovieCard from './MovieCard';
 import { shallow, mount, render } from 'enzyme';
 import {mapStateToProps} from './MovieCard'
 import * as actions from '../../util/fetchData';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store'
 
 jest.mock('../../util/fetchData')
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 
 describe('MovieCard', () => {
@@ -17,29 +21,31 @@ describe('MovieCard', () => {
     beforeEach(() => {
       mockMovie={
         title: 'Avengers',
-        rating: 10,
+        vote_average: 10,
         id: 1,
-        releaseDate: 2019,
-        synopsis: 'a darn good movie',
-        posterImage:  undefined 
+        release_date: 2019,
+        overview: 'a darn good movie',
+        poster_path:  undefined 
 
       }
       wrapper = enzyme.shallow(
+        <Provider store={store}>
         <MovieCard movie={mockMovie} user_id={1}/>
+        </Provider>
       );
   
     })
 
     describe('MovieCard', () => {
 
-      it.skip('should match the snapshot', () => {
+      it('should match the snapshot', () => {
         expect(wrapper).toMatchSnapshot();
       });
 
       describe('ComponentDidMount', () => {
         it.skip('should call getFavorites on componentDidMount', async () => {
           actions.getFavorites.mockImplementation(() => ({data: [mockMovie]}))
-          wrapper = shallow(<MovieCard movie={mockMovie} user_id={1}/>, { disableLifecycleMethods: true })
+          wrapper = shallow(<Provider store={store}><MovieCard movie={mockMovie} user_id={1}/></Provider>, { disableLifecycleMethods: true })
           await wrapper.instance().componentDidMount()
           expect(actions.getFavorites).toHaveBeenCalled()
         });
