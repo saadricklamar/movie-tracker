@@ -22,6 +22,7 @@ header {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+
   }
   
   main form {
@@ -29,6 +30,8 @@ header {
     display: flex;
     flex-direction: column;
     width: 250px;
+    justify-content: center;
+    position: absolute;
   }
   
   input {
@@ -66,6 +69,11 @@ header {
     cursor: pointer;
   }
 
+  .login:hover{
+    background-color: #9DDAF1;
+    color: black;
+  }
+
   p {
     color: #307F9F;
     font-size: 20px;
@@ -74,6 +82,7 @@ header {
   
   h2 {
     color: white;
+    
   }
   
   a {
@@ -94,3 +103,21 @@ header {
     padding-top: 10px;
   }
 
+
+.form-link {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 16px;
+}
+
+.form-link:hover {
+  color: #307F9F;
+}
+
+
+.movie-home {
+  display: flex;
+  flex-wrap: wrap;
+  opacity: .3;
+  justify-content: center;
+}

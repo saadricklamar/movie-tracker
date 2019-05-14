@@ -36,8 +36,8 @@ describe('actions', () => {
         expect(result).toEqual(expected);
     });
 
-  it('should return a type of LOADING with favorites', () => {
-    const bool = []
+  it('should return a type of LOADING with a bool', () => {
+    const bool = true;
     const expected = {
       type: 'IS_LOADING',
       bool
@@ -45,6 +45,13 @@ describe('actions', () => {
     const result = actions.loading(bool)
     expect(result).toEqual(expected)
   })
-
-
+  it('should return a type of ISERROR with a bool', () => {
+    const bool = true;
+    const expected = {
+      type: 'IS_ERROR',
+      bool
+    }
+    const result = actions.throwError(bool)
+    expect(result).toEqual(expected)
+  })
 })

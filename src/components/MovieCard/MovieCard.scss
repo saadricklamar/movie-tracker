@@ -1,8 +1,6 @@
 .movie-card {
   position: relative;
   overflow: hidden;
-	width: 200px;
-  height: 260px;
   perspective: 1000px;
   padding: 1.5rem;
   cursor: pointer;
@@ -24,25 +22,24 @@
   color: gold;
 }
 
-	/* flip the pane when hovered */
-	.movie-card:hover .card, .movie-card.hover .card {
+
+.movie-card:hover .card, .movie-card.hover .card {
 		transform: rotateY(180deg);
 	}
 
 .movie-card, .front, .back {
-	width: 320px;
-	height: 480px;
+	width: 300px;
+	height: 400px;
 }
 
-/* flip speed goes here */
+
 .card {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
-/* hide back of pane during swap */
+
 .front, .back {
 	backface-visibility: hidden;
 	position: absolute;
@@ -50,7 +47,7 @@
 	left: 0;
 }
 
-/* front pane, placed above back */
+
 .front {
   z-index: 2;
   background-position: center;
@@ -61,7 +58,6 @@
   border-radius: 15px;
 }
 
-/* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
   border: 1px solid white;
@@ -76,14 +72,21 @@
 .overview {
   margin-top: 10px;
   padding: 5px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
+  transition: all .2s ease-in-out;
 }
 
 .title,
 .rating,
 .release {
   font-family: 'Poiret One';
-  font-size: 26px;
+  font-size: 20px;
   padding: 5px 10px 0 10px;
 }
+
+.title {
+  font-size: 24px;
+  color: white;
+}
+

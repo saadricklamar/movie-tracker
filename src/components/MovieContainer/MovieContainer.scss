@@ -5,18 +5,21 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: #AF2E53;
 }
 
 #menuToggle {
   display: block;
   position: relative;
   top: 50px;
-  right: 650px;
+  left: 50px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  
 }
+
+
 
 #menuToggle input {
   display: block;
@@ -44,6 +47,7 @@ a:hover {
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
+             
 }
 
 #menuToggle span:first-child {
@@ -71,7 +75,7 @@ a:hover {
 
 #menu {
   position: absolute;
-  height: 1050px;
+  height: 350px;
   width: 150px;
   margin: -100px 0 0 -50px;
   padding: 50px;
@@ -100,12 +104,17 @@ header {
   display:flex;
 }
 
-.header-title h1 {
-  margin: 0 auto;
+.header-title {
+  position: absolute;
+  left: 930px;
+}
+
+.h1 {
+  font-size: 70px;
 }
 
 .movies {
-  margin-top: 200px;
+  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   color: white;
@@ -122,5 +131,13 @@ hr {
 }
 
 .user-name {
-  color: salmon;
+  color: white;
+  font-size: 20px;
+  margin-right: 20px;
+  font-weight: lighter;
+  font-family: 'Times-New-Roman'
+}
+
+.none {
+  color: white;
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Signup.scss';
 import { addUser } from '../../util/fetchData';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom';
+
 
 export class Signup extends Component {
     constructor() {
@@ -103,8 +104,11 @@ export class Signup extends Component {
                     className="input"
                     ref='password'
                 />
-                <h3>{this.state.error}</h3>
-                <button className="create-account">Sign Up</button>
+                <h3 className='email-in-use'>{this.state.error}</h3>
+                <button className='create-account'>Sign Up</button>
+                <Link to='/'>
+                <button className='return-login'>Return To Login</button>
+                </Link>
         </form>
         </main>
       </div>
