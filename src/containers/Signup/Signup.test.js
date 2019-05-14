@@ -6,93 +6,83 @@ import {validateEmail} from './Signup';
 import { addUser } from '../../util/fetchData';
 import { Provider } from 'react-redux';
 
-
-jest.mock('../../util/fetchData')
+jest.mock("../../util/fetchData");
 
 const mockChangeEvent = {
   target: {
-    name:'name',
-    value: 'Anon'
+    name: "name",
+    value: "Anon"
   }
-}
+};
 
 beforeEach(() => {
-  addUser.mockImplementation(() => ({error: false}))
-})
+  addUser.mockImplementation(() => ({ error: false }));
+});
 
-describe('Signup', () => {
-  let wrapper
+describe("Signup", () => {
+  let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
-    <Signup />)
-  })
-
-it('should match the snapshot', () => {
-  expect(wrapper).toMatchSnapshot();
+    wrapper = shallow(<Signup />);
   });
 
-  it('should match the snapshot if it renders the redirect', () => {
-    wrapper.state().validUser = true
-    expect(wrapper).toMatchSnapshot()
+  it("should match the snapshot", () => {
+    expect(wrapper).toMatchSnapshot();
   });
 
+  it("should match the snapshot if it renders the redirect", () => {
+    wrapper.state().validUser = true;
+    expect(wrapper).toMatchSnapshot();
+  });
 
-  it('should have a defult state', () => {
+  it("should have a defult state", () => {
     const mockDefaultState = {
-      name: '',
-      email: '',
-      password: '',
-      status: '',
+      name: "",
+      email: "",
+      password: "",
+      status: "",
       validUser: false,
       formCompleted: false,
       validEmail: false,
       duplicateUser: false,
-      error: ''
+      error: ""
     };
 
     wrapper = shallow(<Signup />, { disableLifecycleMethods: true });
     expect(wrapper.state()).toEqual(mockDefaultState);
   });
 
-
-  describe('validateEmail', () => {
-
-    it('should return validEmail as true if no email is valid', () => {
-      const email = wrapper.state().email = 'bac@gmail.com';
-      const result= wrapper.instance().validateEmail(email);
-      expect(result).toEqual(true)
+  describe("validateEmail", () => {
+    it("should return validEmail as true if no email is valid", () => {
+      const email = (wrapper.state().email = "bac@gmail.com");
+      const result = wrapper.instance().validateEmail(email);
+      expect(result).toEqual(true);
     });
 
-    it('should return validEmail as false if email is invalid', () => {
-      const email = wrapper.state().email = 'bacgmail';
+    it("should return validEmail as false if email is invalid", () => {
+      const email = (wrapper.state().email = "bacgmail");
       const result = wrapper.instance().validateEmail(email);
       expect(result).toEqual(false);
-    })
+    });
 
-    describe('handleChange', () => {
-
-      it('should target and update the name in default state', () => {
-        const expected = 'Anon'
-        wrapper.instance().handleChange(mockChangeEvent)
-        expect(wrapper.state().name).toEqual(expected)
+    describe("handleChange", () => {
+      it("should target and update the name in default state", () => {
+        const expected = "Anon";
+        wrapper.instance().handleChange(mockChangeEvent);
+        expect(wrapper.state().name).toEqual(expected);
       });
+    });
 
-    })
+    describe("checkFormCompleted", () => {
+      it("should set formCompleted to true if there are valid inputs", () => {
+        wrapper.state().name = "Anon";
+        wrapper.state().email = "bac@gmail.com";
+        wrapper.state().password = "movvvaaayyys";
 
-    describe('checkFormCompleted', () => {
-      it('should set formCompleted to true if there are valid inputs', () => {
-        wrapper.state().name = 'Anon'
-        wrapper.state().email = 'bac@gmail.com'
-        wrapper.state().password = 'movvvaaayyys'
-
-        const expected = true
-        wrapper.instance().checkFormCompleted()
-        expect(wrapper.state().formCompleted).toEqual(expected)
-      })
-
-    })
-
-  })
-
-})
+        const expected = true;
+        wrapper.instance().checkFormCompleted();
+        expect(wrapper.state().formCompleted).toEqual(expected);
+      });
+    });
+  });
+});

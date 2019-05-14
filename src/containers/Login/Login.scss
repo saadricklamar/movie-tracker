@@ -1,108 +1,105 @@
 html {
-    background-image: url(../../images/redmovie.jpeg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-image: url(../../images/redmovie.jpeg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 header {
-    padding-top: 50px;
-    color: white;
-    font-family: Anton;
-  }
-  
-  h1 {
-    margin: 0 auto 25px auto;
-    font-size: 100px;
-    color: #307F9F;
-  }
-  
-  main {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
+  padding-top: 50px;
+  color: white;
+  font-family: Anton;
+}
 
-  }
-  
-  main form {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    justify-content: center;
-    position: absolute;
-  }
-  
-  input {
-    height: 35px;
-    border: 2px solid #307F9F;
-    background: #DAEBF7;
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 15px;
-  }
-  
-  i {
-    color: #AF2E53;
-  }
-  
-  input::placeholder {
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-    padding-left: 5px;
-  }
-  
-  .login {
-    background-color: #307F9F;
-    border: 0;
-    color: #FFFFFF;
-    font-size: 1.25em;
-    font-weight: normal;
-    margin: 1.5rem 6.5rem 1.5rem 0;
-    outline: none;
-    padding: .75rem 1rem;
-    width: 250px;
-    height: 50px;
-    cursor: pointer;
-  }
+h1 {
+  margin: 0 auto 25px auto;
+  font-size: 100px;
+  color: #307f9f;
+}
 
-  .login:hover{
-    background-color: #9DDAF1;
-    color: black;
-  }
+main {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
 
-  p {
-    color: #307F9F;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  h2 {
-    color: white;
-    
-  }
-  
-  a {
-    text-decoration: none;
-    margin-top: 15px;
-  }
-  
-  a p:hover {
-    color: white;
-  }
+main form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  justify-content: center;
+  position: absolute;
+}
 
- .incorrect-user-info {
-    font-weight: 300;
-    font-size: 1em;
-    margin: 15px auto;
-    color: red;
-    font-weight: bold;
-    padding-top: 10px;
-  }
+input {
+  height: 35px;
+  border: 2px solid #307f9f;
+  background: #daebf7;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 15px;
+}
 
+i {
+  color: #af2e53;
+}
+
+input::placeholder {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.login {
+  background-color: #307f9f;
+  border: 0;
+  color: #ffffff;
+  font-size: 1.25em;
+  font-weight: normal;
+  margin: 1.5rem 6.5rem 1.5rem 0;
+  outline: none;
+  padding: 0.75rem 1rem;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.login:hover {
+  background-color: #9ddaf1;
+  color: black;
+}
+
+p {
+  color: #307f9f;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+a p:hover {
+  color: white;
+}
+
+.incorrect-user-info {
+  font-weight: 300;
+  font-size: 1em;
+  margin: 15px auto;
+  color: red;
+  font-weight: bold;
+  padding-top: 10px;
+}
 
 .form-link {
   font-size: 28px;
@@ -111,13 +108,12 @@ header {
 }
 
 .form-link:hover {
-  color: #307F9F;
+  color: #307f9f;
 }
-
 
 .movie-home {
   display: flex;
   flex-wrap: wrap;
-  opacity: .3;
+  opacity: 0.3;
   justify-content: center;
 }
