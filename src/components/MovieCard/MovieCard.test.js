@@ -1,37 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MovieCard from './MovieCard';
-import {shallow } from 'enzyme';
+import {MovieCard} from './MovieCard';
+import { shallow, mount, render } from 'enzyme';
 import {mapStateToProps} from './MovieCard'
 import * as actions from '../../util/fetchData';
-
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store'
 
 jest.mock('../../util/fetchData')
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 
 describe('MovieCard', () => {
     let wrapper;
     let mockMovie;
+    let enzyme = require('enzyme');
+
     
     beforeEach(() => {
       mockMovie={
         title: 'Avengers',
-        rating: 10,
+        vote_average: 10,
         id: 1,
-        releaseDate: 2019,
-        synopsis: 'a darn good movie',
-        posterImage:  undefined 
+        release_date: 2019,
+        overview: 'a darn good movie',
+        poster_path:  undefined 
 
       }
-      wrapper = shallow(
+      wrapper = enzyme.shallow(
         <MovieCard movie={mockMovie} user_id={1}/>
       );
   
     })
 
-    describe('MovieCard Component', () => {
+    describe('MovieCard', () => {
 
-      it('should match the snapshot with all data passed in correctly', () => {
+      it('should match the snapshot', () => {
         expect(wrapper).toMatchSnapshot();
       });
 

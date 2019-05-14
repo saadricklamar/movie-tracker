@@ -3,8 +3,7 @@ import './Signup.scss';
 import { addUser } from '../../util/fetchData';
 import { Redirect } from 'react-router-dom'
 
-class Signup extends Component {
-    //extends signin? 
+export class Signup extends Component {
     constructor() {
         super()
         this.state ={
@@ -17,8 +16,6 @@ class Signup extends Component {
             validEmail: false,
             duplicateUser: false,
             error: ''
-
-
         }
     }
 

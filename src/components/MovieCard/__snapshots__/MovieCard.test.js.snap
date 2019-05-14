@@ -1,3 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieCard MovieCard Component should match the snapshot with all data passed in correctly 1`] = `undefined`;
+exports[`MovieCard MovieCard should match the snapshot 1`] = `
+<div
+  className="movie-card"
+>
+  <div
+    className="card"
+  >
+    <div
+      className="front"
+      style={
+        Object {
+          "backgroundImage": "url(undefined)",
+        }
+      }
+    />
+    <div
+      className="back"
+    >
+      <i
+        className="fas fa-star false"
+        onClick={[Function]}
+      />
+      <p
+        className="title"
+      >
+        Avengers
+      </p>
+      <p
+        className="rating"
+      >
+        Rating: 
+        10
+      </p>
+      <p
+        className="release"
+      >
+         Release: 
+        2019
+      </p>
+      <p
+        className="overview"
+      >
+        Summary: 
+        a darn good movie
+      </p>
+    </div>
+  </div>
+</div>
+`;
