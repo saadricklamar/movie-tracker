@@ -1,6 +1,6 @@
 ## Movie Tracker
 
-Movie-Tracker is a web based application built in React and Redux. 
+Movie-Tracker is a web based application built in React and Redux that tracks the hottest movies and your favorite movies.
 
 ## Project Goals:
 
