@@ -5,6 +5,7 @@ import Signup from "../Signup/Signup";
 import MovieContainer from "../../components/MovieContainer/MovieContainer";
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 
+
 class App extends Component {
   constructor() {
     super();
