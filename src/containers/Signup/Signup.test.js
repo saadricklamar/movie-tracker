@@ -6,8 +6,8 @@ import {validateEmail} from './Signup';
 import { addUser } from '../../util/fetchData';
 import { Provider } from 'react-redux';
 
-jest.mock("../../util/fetchData");
 
+jest.mock("../../util/fetchData");
 
 const mockChangeEvent = {
   target: {

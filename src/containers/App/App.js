@@ -3,7 +3,7 @@ import "./App.scss";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 import MovieContainer from "../../components/MovieContainer/MovieContainer";
-import { Route, Switch, Redirect, withRouter } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 
 class App extends Component {
