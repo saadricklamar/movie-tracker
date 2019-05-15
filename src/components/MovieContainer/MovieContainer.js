@@ -41,7 +41,7 @@ export class MovieContainer extends Component {
 
   render() {
     const { movies } = this.props;
-    const { favorites, error } = this.state;
+    const { favorites } = this.state;
     return (
       <section>
         <header>

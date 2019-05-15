@@ -44,8 +44,7 @@ export class Login extends Component {
   };
 
   render() {
-    console.log(this.state.movies);
-    const { email, password, incorrectUserInfo, error, movies } = this.state;
+    const { error, movies } = this.state;
     const movieImg = movies.map(movie => {
       return (
         <article>
