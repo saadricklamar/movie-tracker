@@ -99,7 +99,6 @@ export class MovieContainer extends Component {
 export const mapStateToProps = state => ({
   movies: state.movies,
   user_id: state.users.id,
-  // isLoading: state.isLoading,
   user: state.users
 });
 
@@ -112,3 +111,6 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(MovieContainer);
+
+//favorites is only updating in react state and not in redux state
+//we have a deleteFav action that we should be using
