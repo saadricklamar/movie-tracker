@@ -29,7 +29,7 @@ Movie-Tracker is a web based application built in React and Redux.
 
 ## Wireframe
 
-
+[![Screen-Shot-2019-05-15-at-6-15-11-AM.png](https://i.postimg.cc/zfPmxNDs/Screen-Shot-2019-05-15-at-6-15-11-AM.png)](https://postimg.cc/94TNfv7b)
 
 
 ## Contributors
