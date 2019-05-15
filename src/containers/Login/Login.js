@@ -79,7 +79,7 @@ export class Login extends Component {
                 onChange={this.handleChange}
               />
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Password"
                 onChange={this.handleChange}
