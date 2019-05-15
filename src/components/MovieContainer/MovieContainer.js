@@ -8,6 +8,7 @@ import { fetchMovies } from "../../thunks/fetchMovieThunk";
 import MovieCard from "../MovieCard/MovieCard";
 import { getFavorites } from "../../util/fetchData";
 import { uid } from "react-uid";
+import { PropTypes } from 'prop-types';
 
 export class MovieContainer extends Component {
   constructor() {
@@ -107,6 +108,14 @@ export const mapDispatchToProps = dispatch => ({
   signOut: () => dispatch(signOut()),
   loadMovies: url => dispatch(fetchMovies(url))
 });
+
+MovieContainer.propTypes = {
+  movies: PropTypes.array.isRequired,
+  loadMovies: PropTypes.func.isRequired,
+  signOut: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  user_id: PropTypes.number.isRequired
+}
 
 export default connect(
   mapStateToProps,

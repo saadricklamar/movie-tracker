@@ -73,4 +73,9 @@ export const mapStateToProps = state => ({
   user_id: state.users.id
 });
 
+MovieCard.propTypes =  {
+  movie: PropTypes.object.isRequired,
+  user_id: PropTypes.number.isRequired
+}
+
 export default connect(mapStateToProps)(MovieCard);
