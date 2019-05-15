@@ -28,7 +28,7 @@ export class MovieContainer extends Component {
   };
 
   toggleFavoritesDisplay = () => {
-    if (this.state.favoriteMovies.length > 0) {
+    if (this.state.favoriteMovies) {
       this.setState({ favorites: true });
     } else {
       this.setState({ favorites: false });
