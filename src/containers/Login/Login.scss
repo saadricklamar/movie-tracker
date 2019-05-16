@@ -1,3 +1,5 @@
+@import '../../SCSS/variables.scss';
+
 html {
   background-image: url(../../images/redmovie.jpeg);
   -webkit-background-size: cover;
@@ -9,13 +11,15 @@ html {
 header {
   padding-top: 50px;
   color: white;
-  font-family: Anton;
-}
-
-h1 {
-  margin: 0 auto 25px auto;
-  font-size: 100px;
-  color: #307f9f;
+  font-family: 'Anton';
+  h1 {
+    margin: 0 auto 25px auto;
+    font-size: 100px;
+    color: $primary-blue-color;
+    i {
+      color: #af2e53;
+    }    
+  }
 }
 
 main {
@@ -35,28 +39,22 @@ main form {
 
 input {
   height: 35px;
-  border: 2px solid #307f9f;
+  border: 2px solid $primary-blue-color;
   background: #daebf7;
   color: black;
   font-weight: bold;
   font-size: 14px;
   margin-top: 15px;
-}
-
-i {
-  color: #af2e53;
-}
-
-input::placeholder {
-  color: black;
-  font-weight: bold;
-  font-size: 14px;
-  padding-left: 5px;
+  &::placeholder {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 5px;
+  }
 }
 
 .login {
-  background-color: #307f9f;
-  border: 0;
+  background-color: $primary-blue-color;
   color: #ffffff;
   font-size: 1.25em;
   font-weight: normal;
@@ -66,29 +64,19 @@ input::placeholder {
   width: 250px;
   height: 50px;
   cursor: pointer;
-}
-
-.login:hover {
-  background-color: #9ddaf1;
-  color: black;
+  &:hover {
+    background-color: #9ddaf1;
+    color: black;
+  }
 }
 
 p {
-  color: #307f9f;
+  color: $primary-blue-color;
   font-size: 20px;
   font-weight: bold;
 }
 
 h2 {
-  color: white;
-}
-
-a {
-  text-decoration: none;
-  margin-top: 15px;
-}
-
-a p:hover {
   color: white;
 }
 
@@ -105,10 +93,9 @@ a p:hover {
   font-size: 28px;
   font-weight: bold;
   padding-top: 16px;
-}
-
-.form-link:hover {
-  color: #307f9f;
+  &:hover {
+    color: $primary-blue-color;
+  }
 }
 
 .movie-home {
