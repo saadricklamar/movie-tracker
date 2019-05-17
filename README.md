@@ -21,6 +21,24 @@ Movie-Tracker is a web based application built in React and Redux that tracks th
 
 4. Run `npm start` in terminal to start server.
 
+You must first run the back-end server by entering the following commands into your terminal:
+
+* `mkdir movie-tracker`
+* `cd movie-tracker`
+* `git clone https://github.com/turingschool-examples/movie-tracker backend`
+* `cd backend`
+* `npm install`
+* `npm start`
+* the backend server must run on `http://localhost:3000`
+
+Now you can set up the front-end:
+
+* Create new tab in your terminal and cd into the main movie-tracker directory
+* `git clone https://github.com/saadricklamar/movie-tracker.git`
+* `cd movie-tracker`
+* `npm install`
+* `npm start`
+
 ## Desktop View
 
 [![localhost-3001-8.png](https://i.postimg.cc/T2D0sxYr/localhost-3001-8.png)](https://postimg.cc/K4mtKdTz)
