@@ -13,14 +13,6 @@ Movie-Tracker is a web based application built in React and Redux that tracks th
 
 ## Installation and Setup Instructions
 
-1. Clone down this repository.
-
-2. `cd` into directory.
-
-3. Run `npm install` in terminal.
-
-4. Run `npm start` in terminal to start server.
-
 You must first run the back-end server by entering the following commands into your terminal:
 
 * `mkdir movie-tracker`
