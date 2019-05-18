@@ -15,16 +15,11 @@ export class Login extends Component {
       password: "",
       incorrectUserInfo: false,
       validUser: false,
-      error: "",
-      movies: []
+      error: ""
     };
   }
 
-  componentDidMount = async () => {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22`;
-    const movies = await fetchData(url);
-    this.setState({ movies: movies.results });
-  };
+  
 
   handleChange = e => {
     const { value, name } = e.target;
@@ -44,19 +39,7 @@ export class Login extends Component {
   };
 
   render() {
-    const { error, movies } = this.state;
-    const movieImg = movies.map(movie => {
-      return (
-        <article>
-          <img
-            src={
-              "https://image.tmdb.org/t/p/w185_and_h278_bestv2" +
-              movie.poster_path
-            }
-          />
-        </article>
-      );
-    });
+    const { error } = this.state;
     if (this.state.validUser) {
       return <Redirect to="/MovieContainer" />;
     }
@@ -69,7 +52,6 @@ export class Login extends Component {
             </h1>
           </header>
           <main>
-            <div className="movie-home">{movieImg}</div>
             <form onSubmit={this.handleSubmit}>
               <input
                 type="text"
