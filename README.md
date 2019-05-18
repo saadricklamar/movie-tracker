@@ -31,9 +31,10 @@ Now you can set up the front-end:
 * `npm install`
 * `npm start`
 
-## Desktop View
+## Demo
 
-[![localhost-3001-8.png](https://i.postimg.cc/T2D0sxYr/localhost-3001-8.png)](https://postimg.cc/K4mtKdTz)
+
+## Desktop View
 
 [![localhost-3001-10.png](https://i.postimg.cc/4NMJxzTC/localhost-3001-10.png)](https://postimg.cc/LntdygXv)
 
