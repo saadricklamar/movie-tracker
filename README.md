@@ -37,7 +37,8 @@ Now you can set up the front-end:
 
 ## Desktop View
 
-[![localhost-3001-10.png](https://i.postimg.cc/4NMJxzTC/localhost-3001-10.png)](https://postimg.cc/LntdygXv)
+<img width="1437" alt="Movie" src="https://user-images.githubusercontent.com/42000931/58046756-6c15d800-7b03-11e9-9cff-f92863b7d4df.png">
+
 
 ## Wireframe
 
