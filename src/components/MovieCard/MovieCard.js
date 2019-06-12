@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import "./MovieCard.scss";
 import * as actions from "../../util/fetchData";
+import { toggleFavorite } from "../../actions";
 
 export class MovieCard extends Component {
   constructor() {
@@ -27,7 +28,8 @@ export class MovieCard extends Component {
     }
   };
 
-  toggleMovieFavorite = async () => {
+  toggleMovieFavorite = async (id) => {
+    this.props.toggleFavorite(id);
     let { movie, user_id } = this.props;
     let movieID = movie.id;
     if (this.state.favorite) {
@@ -51,7 +53,7 @@ export class MovieCard extends Component {
           />
           <div className="back">
             <i
-              onClick={this.toggleMovieFavorite}
+              onClick={() => this.toggleMovieFavorite(this.props.movie.id)}
               className={`fas fa-star ${this.state.favorite && "favorite"}`}
             />
             <p className="title">{this.props.movie.title}</p>
@@ -73,9 +75,13 @@ export const mapStateToProps = state => ({
   user_id: state.users.id
 });
 
+export const mapDispatchToProps = dispatch => ({
+  toggleFavorite: id => dispatch(toggleFavorite(id))
+});
+
 MovieCard.propTypes =  {
   movie: PropTypes.object.isRequired,
   user_id: PropTypes.number.isRequired
 }
 
-export default connect(mapStateToProps)(MovieCard);
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCard);

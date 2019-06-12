@@ -8,6 +8,11 @@ export const login = user => ({
   user
 });
 
+export const toggleFavorite = id => ({
+  type: 'TOGGLE_FAVORITE',
+  id
+});
+
 export const signOut = () => ({
   type: "SIGN_OUT"
 });

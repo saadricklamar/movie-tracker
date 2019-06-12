@@ -35,7 +35,8 @@ export const addFavorite = async (movie_id, user_id, movie) => {
         poster_path: movie.poster_path,
         release_date: movie.release_date,
         vote_average: movie.vote_average,
-        overview: movie.overview
+        overview: movie.overview,
+        favorite: true
       }),
       headers: {
         "Content-Type": "application/json"
@@ -50,7 +51,9 @@ export const getFavorites = async user_id => {
   const response = await fetch(
     `http://localhost:3000/api/users/${user_id}/favorites`
   );
+  console.log(response)
   const data = await response.json();
+  
   return data;
 };
 
