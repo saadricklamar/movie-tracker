@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.scss";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
@@ -6,12 +6,7 @@ import MovieContainer from "../../components/MovieContainer/MovieContainer";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 
-class App extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
+const App = () => {
     return (
       <div className="App">
         <Switch>
@@ -23,6 +18,6 @@ class App extends Component {
       </div>
     );
   }
-}
+
 
 export default App;

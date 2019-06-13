@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import "./MovieCard.scss";
 import * as actions from "../../util/fetchData";
+import { toggleFavorite } from "../../actions";
 
 export class MovieCard extends Component {
   constructor() {
@@ -15,19 +16,17 @@ export class MovieCard extends Component {
   componentDidMount = async () => {
     const currentFavorites = await actions.getFavorites(this.props.user_id);
     const locatedFavorites = currentFavorites.data.find(favoriteMovie => {
-      return (
-        favoriteMovie.movie_id === this.props.movie.movie_id ||
-        favoriteMovie.movie_id === this.props.movie.id
-      );
+      return (favoriteMovie.movie_id === this.props.movie.id);
     });
     if (locatedFavorites) {
       this.setState({ favorite: true });
     } else {
       this.setState({ favorite: false });
     }
-  };
+ }
 
-  toggleMovieFavorite = async () => {
+  toggleMovieFavorite = async (id) => {
+    this.props.toggleFavorite(id);
     let { movie, user_id } = this.props;
     let movieID = movie.id;
     if (this.state.favorite) {
@@ -51,7 +50,7 @@ export class MovieCard extends Component {
           />
           <div className="back">
             <i
-              onClick={this.toggleMovieFavorite}
+              onClick={() => this.toggleMovieFavorite(this.props.movie.id)}
               className={`fas fa-star ${this.state.favorite && "favorite"}`}
             />
             <p className="title">{this.props.movie.title}</p>
@@ -73,9 +72,13 @@ export const mapStateToProps = state => ({
   user_id: state.users.id
 });
 
+export const mapDispatchToProps = dispatch => ({
+  toggleFavorite: id => dispatch(toggleFavorite(id))
+});
+
 MovieCard.propTypes =  {
   movie: PropTypes.object.isRequired,
   user_id: PropTypes.number.isRequired
 }
 
-export default connect(mapStateToProps)(MovieCard);
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCard);

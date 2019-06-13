@@ -7,7 +7,8 @@ export const cleanMovieData = movies => {
       releaseDate: movie.release_date,
       synopsis: movie.overview,
       posterImage:
-        "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path
+        "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path,
+      favorite: false
     };
   });
 };
