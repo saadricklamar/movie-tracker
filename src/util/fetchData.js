@@ -51,7 +51,6 @@ export const getFavorites = async user_id => {
   const response = await fetch(
     `http://localhost:3000/api/users/${user_id}/favorites`
   );
-  console.log(response)
   const data = await response.json();
   
   return data;

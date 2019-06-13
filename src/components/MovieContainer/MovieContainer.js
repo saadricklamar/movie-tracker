@@ -22,6 +22,9 @@ export class MovieContainer extends Component {
 
 
 componentDidMount = async () => {
+  // const favoriteMovies = await getFavorites(this.props.user_id);
+  //   this.setState({ favoriteMovies: favoriteMovies.data });
+  //   await this.props.loadMovies(url);
   try {
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&sort_by=popularity.desc`);
     if (response.ok) {
@@ -35,9 +38,7 @@ componentDidMount = async () => {
 
   // componentDidMount = async () => {
   //   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&sort_by=popularity.desc`;
-  //   const favoriteMovies = await getFavorites(this.props.user_id);
-  //   this.setState({ favoriteMovies: favoriteMovies.data });
-  //   await this.props.loadMovies(url);
+  //   
   // };
 
   toggleFavoritesDisplay = () => {
@@ -96,7 +97,6 @@ componentDidMount = async () => {
           </div>
         </nav>
         </header>
-        
         {!favorites && (
           <main className="movies">
             {movies.map(movie => {

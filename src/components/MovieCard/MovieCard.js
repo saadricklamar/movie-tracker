@@ -16,17 +16,14 @@ export class MovieCard extends Component {
   componentDidMount = async () => {
     const currentFavorites = await actions.getFavorites(this.props.user_id);
     const locatedFavorites = currentFavorites.data.find(favoriteMovie => {
-      return (
-        favoriteMovie.movie_id === this.props.movie.movie_id ||
-        favoriteMovie.movie_id === this.props.movie.id
-      );
+      return (favoriteMovie.movie_id === this.props.movie.id);
     });
     if (locatedFavorites) {
       this.setState({ favorite: true });
     } else {
       this.setState({ favorite: false });
     }
-  };
+ }
 
   toggleMovieFavorite = async (id) => {
     this.props.toggleFavorite(id);

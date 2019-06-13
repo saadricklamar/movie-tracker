@@ -16,11 +16,13 @@ export const moviesReducer = (state = [], action) => {
       });
       return [...state, ...movies];
     case "TOGGLE_FAVORITE":
-      state.filter(movie => {
+      state.map(movie => {
+        if (movie.id === action.id && movie.favorite === true) {
+          return (movie.favorite = false);
+        }
         if (movie.id === action.id) {
           return (movie.favorite = true);
-        }
-        
+        } 
       });
       return [...state];
     default:
