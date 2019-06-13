@@ -123,11 +123,11 @@ a:hover {
 header {
   padding: 0;
   display: flex;
+  justify-content: space-between;
 }
 
 .header-title {
-  position: absolute;
-  left: 930px;
+  margin: 0 auto;
 }
 
 .h1 {
@@ -135,7 +135,7 @@ header {
 }
 
 .movies {
-  margin-top: 100px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   color: white;

@@ -56,11 +56,7 @@ componentDidMount = async () => {
     return (
       <section>
         <header>
-          <section className="header-title">
-            <h1 className="h1">
-              Movie <i className="fas fa-film" /> Tracker
-            </h1>
-          </section>
+          
         <nav role='navigation'>
           <div id='menuToggle'> 
             <input type="checkbox" />
@@ -89,6 +85,11 @@ componentDidMount = async () => {
             </ul>
           </div>
         </nav>
+        <section className="header-title">
+            <h1 className="h1">
+              Movie <i className="fas fa-film" /> Tracker
+            </h1>
+          </section>
         </header>
         {!favorites && (
           <main className="movies">
