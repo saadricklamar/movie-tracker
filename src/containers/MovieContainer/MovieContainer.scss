@@ -8,6 +8,12 @@ a:hover {
   color: #af2e53;
 }
 
+.fa-ticket-alt {
+  color: #af2e53;
+  padding: 40px;
+  font-size: 40px;
+}
+
 .no-favorites {
   color:  #FF5733  ;
   font-size: 14px;
@@ -19,7 +25,7 @@ a:hover {
 .loader {
   margin: 400px auto;
   border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid #af2e53;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -123,11 +129,11 @@ a:hover {
 header {
   padding: 0;
   display: flex;
+  justify-content: space-between;
 }
 
 .header-title {
-  position: absolute;
-  left: 930px;
+  margin: 0 auto;
 }
 
 .h1 {
@@ -135,7 +141,7 @@ header {
 }
 
 .movies {
-  margin-top: 100px;
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   color: white;

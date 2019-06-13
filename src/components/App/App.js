@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.scss";
-import Login from "../Login/Login";
-import Signup from "../Signup/Signup";
+import Login from "../../containers/Login/Login";
+import Signup from "../../containers/Signup/Signup";
 import About from "../About/About";
-import MovieContainer from "../../components/MovieContainer/MovieContainer";
+import MovieContainer from "../../containers/MovieContainer/MovieContainer";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 

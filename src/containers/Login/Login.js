@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { signUserIn } from "../../thunks/signUserIn";
 import "./Login.scss";
-import { fetchData } from "../../util/fetchData";
-import { key } from "../../util/key";
+
 
 export class Login extends Component {
   constructor() {
