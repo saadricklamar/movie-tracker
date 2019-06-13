@@ -51,12 +51,11 @@ componentDidMount = async () => {
     const { movies, loading } = this.props;
     const { favorites } = this.state;
     if (loading && !movies.length) {
-      return <div className="loader" />;
+      return <div className="loader"><i class="fas fa-ticket-alt"></i></div>;
     } else {
     return (
       <section>
         <header>
-          
         <nav role='navigation'>
           <div id='menuToggle'> 
             <input type="checkbox" />
