@@ -2,6 +2,7 @@ import React from "react";
 import "./App.scss";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
+import About from "../About/About";
 import MovieContainer from "../../components/MovieContainer/MovieContainer";
 import { Route, Switch, Redirect } from "react-router-dom";
 
@@ -13,6 +14,7 @@ const App = () => {
           <Route exact path="/" component={Login} />
           <Route path="/Signup" component={Signup} />
           <Route path="/MovieContainer" component={MovieContainer} />
+          <Route path="/About" component={About} />
           <Redirect to="/" />
         </Switch>
       </div>
