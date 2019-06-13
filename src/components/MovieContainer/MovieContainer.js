@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import "./MovieContainer.scss";
-import { signOut, loadMovies } from "../../actions";
+import { signOut, loadMovies, loading } from "../../actions";
 import { key } from "../../util/key";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchMovies } from "../../thunks/fetchMovieThunk";
 import MovieCard from "../MovieCard/MovieCard";
-import { getFavorites } from "../../util/fetchData";
 import { uid } from "react-uid";
 import { PropTypes } from 'prop-types';
 
@@ -22,9 +20,6 @@ export class MovieContainer extends Component {
 
 
 componentDidMount = async () => {
-  // const favoriteMovies = await getFavorites(this.props.user_id);
-  //   this.setState({ favoriteMovies: favoriteMovies.data });
-  //   await this.props.loadMovies(url);
   try {
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&sort_by=popularity.desc`);
     if (response.ok) {
@@ -35,11 +30,6 @@ componentDidMount = async () => {
     this.setState({ error });
   }
 }
-
-  // componentDidMount = async () => {
-  //   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&sort_by=popularity.desc`;
-  //   
-  // };
 
   toggleFavoritesDisplay = () => {
     const { movies } = this.props
@@ -58,8 +48,11 @@ componentDidMount = async () => {
   };
 
   render() {
-    const { movies } = this.props;
+    const { movies, loading } = this.props;
     const { favorites } = this.state;
+    if (loading && !movies.length) {
+      return <div className="loader" />;
+    } else {
     return (
       <section>
         <header>
@@ -114,17 +107,20 @@ componentDidMount = async () => {
       </section>
     );
   }
+  }
 }
 
 export const mapStateToProps = state => ({
   movies: state.movies,
   user_id: state.users.id,
-  user: state.users
+  user: state.users,
+  loading: state.loading
 });
 
 export const mapDispatchToProps = dispatch => ({
   signOut: () => dispatch(signOut()),
-  addMovies: obj => dispatch(loadMovies(obj))
+  addMovies: obj => dispatch(loadMovies(obj)),
+  loading: bool => dispatch(loading(bool))
 });
 
 MovieContainer.propTypes = {
