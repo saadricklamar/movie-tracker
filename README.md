@@ -33,7 +33,7 @@ Now you can set up the front-end:
 
 ## Demo
 
-![2019-05-18 14 33 44](https://user-images.githubusercontent.com/42000931/57974742-6c369c00-797a-11e9-9dd0-d20643db3779.gif)
+![MovieTracker](https://user-images.githubusercontent.com/42000931/60402342-7e942000-9b4b-11e9-875f-a0da9638f87c.gif)
 
 ## Desktop View
 
