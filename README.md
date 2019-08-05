@@ -1,6 +1,6 @@
 ## Movie Tracker
 
-Movie-Tracker is a web based application built in React and Redux that tracks the hottest movies and your favorite movies.
+Movie-Tracker is a web based application built in React and Redux that tracks the hottest and latest movies. Users are prompted to create an account upon which they can login. From there they can browse the newest movies, favorite movies they like, and view those favorites. 
 
 ## Project Goals:
 
@@ -35,15 +35,7 @@ Now you can set up the front-end:
 
 ## Desktop View
 
-<img width="1437" alt="Movie" src="https://user-images.githubusercontent.com/42000931/58046756-6c15d800-7b03-11e9-9cff-f92863b7d4df.png">
-
-
-## Wireframe
-
-[![Screen-Shot-2019-05-15-at-6-15-11-AM.png](https://i.postimg.cc/zfPmxNDs/Screen-Shot-2019-05-15-at-6-15-11-AM.png)](https://postimg.cc/94TNfv7b)
-
-## Issues/Future Editions
-  -Issues and wants for future editions are on the issues tabs for this project on github.com
+![Screen Shot 2019-08-05 at 12 05 05 PM](https://user-images.githubusercontent.com/42000931/62493266-e9a9c580-b78d-11e9-81f6-edbfe2a0099d.png)
 
 
 ## Contributors
