@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.scss";
 import Login from "../../containers/Login/Login";
 import Signup from "../../containers/Signup/Signup";
 import About from "../About/About";
