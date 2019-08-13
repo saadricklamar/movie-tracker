@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { signUserIn } from "../../thunks/signUserIn";
-import "./Login.scss";
+
 
 
 export class Login extends Component {

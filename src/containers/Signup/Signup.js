@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Signup.scss";
 import { addUser } from "../../util/fetchData";
 import { Redirect, Link } from "react-router-dom";
 

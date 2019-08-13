@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
-import "./MovieCard.scss";
 import * as actions from "../../util/fetchData";
 import { toggleFavorite } from "../../actions";
 

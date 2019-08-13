@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./MovieContainer.scss";
 import { signOut, loadMovies, loading } from "../../actions";
 import { key } from "../../util/key";
 import { connect } from "react-redux";
