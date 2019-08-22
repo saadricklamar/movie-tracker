@@ -23,8 +23,7 @@ You must first run the back-end server by entering the following commands into y
 
 Now you can set up the front-end:
 
-* Create new tab in your terminal and cd into the main movie-tracker directory
-* `git clone https://github.com/saadricklamar/movie-tracker.git`
+* Create new tab in your terminal and `git clone https://github.com/saadricklamar/movie-tracker.git`
 * `cd movie-tracker`
 * `npm install`
 * `npm start`
