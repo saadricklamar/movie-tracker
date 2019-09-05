@@ -11,6 +11,14 @@ Movie-Tracker is a web based application built in React and Redux that tracks th
 * Use propTypes to manipulate props passed to each component.
 * Write meaningful, comprehensive unit and integration tests.
 
+## Tech Used:
+
+* JavaScript
+* React/Redux
+* Postico
+* PostgreSQL
+* Jest/Enzyme
+
 ## Installation and Setup Instructions
 
 You must first run the back-end server by entering the following commands into your terminal:
