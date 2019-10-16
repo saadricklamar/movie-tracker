@@ -9,7 +9,7 @@ export const login = user => ({
 });
 
 export const toggleFavorite = id => ({
-  type: 'TOGGLE_FAVORITE',
+  type: "TOGGLE_FAVORITE",
   id
 });
 

@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Signup} from './Signup';
-import {shallow} from 'enzyme';
-import {validateEmail} from './Signup';
-import { addUser } from '../../util/fetchData';
-import { Provider } from 'react-redux';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import { Signup } from "./Signup";
+import { shallow } from "enzyme";
+import { validateEmail } from "./Signup";
+import { addUser } from "../../util/fetchData";
+import { Provider } from "react-redux";
 
 jest.mock("../../util/fetchData");
 

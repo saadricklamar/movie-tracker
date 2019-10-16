@@ -7,10 +7,10 @@ export const fetchMovies = url => {
     try {
       dispatch(loading(true));
       const response = await fetch(url);
-      
+
       const movies = await response.json();
-      console.log(movies)
-      console.log(movies)
+      console.log(movies);
+      console.log(movies);
       dispatch(loadMovies(movies));
       dispatch(loading(false));
     } catch (error) {

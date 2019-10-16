@@ -44,7 +44,7 @@ describe("actions", () => {
     const result = actions.loading(bool);
     expect(result).toEqual(expected);
   });
-  
+
   it("should return a type of ISERROR with a bool", () => {
     const bool = true;
     const expected = {

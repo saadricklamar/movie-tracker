@@ -4,16 +4,13 @@ import { MovieContainer } from "./MovieContainer";
 import { shallow } from "enzyme";
 import { mapStateToProps, mapDispatchToProps } from "./MovieContainer";
 
-// jest.mock('../../utils/apiCalls')
-// jest.mock('../../thunks/fetchMovies')
-
 describe("MovieContainer", () => {
   let wrapper;
   let mockEvent;
   let mockUser = {
     name: "Bridgett"
   };
-  let mockUserId = 1
+  let mockUserId = 1;
   let mockMovies;
   const mockSignOut = jest.fn();
   const mockLoadMovies = jest.fn();
@@ -30,7 +27,9 @@ describe("MovieContainer", () => {
       }
     ];
     mockEvent = { target: { value: "e" } };
-    wrapper = shallow(<MovieContainer user={mockUser} movies={mockMovies} user_id={1}/>);
+    wrapper = shallow(
+      <MovieContainer user={mockUser} movies={mockMovies} user_id={1} />
+    );
   });
 
   it("should match the snapshot", () => {
@@ -51,14 +50,17 @@ describe("MovieContainer", () => {
     it.skip("should call create an object with a movies array", () => {
       const mockState = {
         movies: [mockMovies],
-        user_id: {users:1},
-        user: {mockUser}
+        user_id: { users: 1 },
+        user: { mockUser }
       };
-      const expected = {movies: [mockMovies], user_id: {id:1}, user: {mockUser}}
+      const expected = {
+        movies: [mockMovies],
+        user_id: { id: 1 },
+        user: { mockUser }
+      };
 
-      const mappedProps = mapStateToProps(mockState)
-      expect(mappedProps).toEqual(expected)
-
+      const mappedProps = mapStateToProps(mockState);
+      expect(mappedProps).toEqual(expected);
     });
   });
 });
