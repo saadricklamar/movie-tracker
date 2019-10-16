@@ -52,7 +52,7 @@ export const getFavorites = async user_id => {
     `http://localhost:3000/api/users/${user_id}/favorites`
   );
   const data = await response.json();
-  
+
   return data;
 };
 

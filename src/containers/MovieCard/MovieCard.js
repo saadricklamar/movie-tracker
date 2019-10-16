@@ -15,16 +15,16 @@ export class MovieCard extends Component {
   componentDidMount = async () => {
     const currentFavorites = await actions.getFavorites(this.props.user_id);
     const locatedFavorites = currentFavorites.data.find(favoriteMovie => {
-      return (favoriteMovie.movie_id === this.props.movie.id);
+      return favoriteMovie.movie_id === this.props.movie.id;
     });
     if (locatedFavorites) {
       this.setState({ favorite: true });
     } else {
       this.setState({ favorite: false });
     }
- }
+  };
 
-  toggleMovieFavorite = async (id) => {
+  toggleMovieFavorite = async id => {
     this.props.toggleFavorite(id);
     let { movie, user_id } = this.props;
     let movieID = movie.id;
@@ -75,9 +75,12 @@ export const mapDispatchToProps = dispatch => ({
   toggleFavorite: id => dispatch(toggleFavorite(id))
 });
 
-MovieCard.propTypes =  {
+MovieCard.propTypes = {
   movie: PropTypes.object.isRequired,
   user_id: PropTypes.number.isRequired
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieCard);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MovieCard);

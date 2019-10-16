@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { signUserIn } from "../../thunks/signUserIn";
 
-
-
 export class Login extends Component {
   constructor() {
     super();
@@ -16,8 +14,6 @@ export class Login extends Component {
       error: ""
     };
   }
-
-  
 
   handleChange = e => {
     const { value, name } = e.target;
@@ -85,4 +81,3 @@ export default connect(
   null,
   mapDispatchToProps
 )(Login);
-

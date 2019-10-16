@@ -22,7 +22,7 @@ export const moviesReducer = (state = [], action) => {
         }
         if (movie.id === action.id) {
           return (movie.favorite = true);
-        } 
+        }
       });
       return [...state];
     default:

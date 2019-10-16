@@ -1,4 +1,4 @@
-@import '../../SCSS/variables.scss';
+@import "../../SCSS/variables.scss";
 
 html {
   background-image: url(../../images/redmovie.jpeg);
@@ -11,14 +11,14 @@ html {
 header {
   padding-top: 50px;
   color: white;
-  font-family: 'Anton';
+  font-family: "Anton";
   h1 {
     margin: 0 auto 25px auto;
     font-size: 100px;
     color: $primary-blue-color;
     i {
       color: #af2e53;
-    }    
+    }
   }
 }
 
