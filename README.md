@@ -2,22 +2,14 @@
 
 Movie-Tracker is a web based application built in React and Redux that tracks the hottest and latest movies. Users are prompted to create an account upon which they can login. From there they can browse the newest movies, favorite movies they like, and view those favorites. 
 
-## Project Goals:
+## Tech Stack
 
-* Implement Router and Redux
-* Implement SRP (single responsbility principle) in application logic.
-* Create modular, reusable React components.
-* Create a well constructed UI.
-* Use propTypes to manipulate props passed to each component.
-* Write meaningful, comprehensive unit and integration tests.
-
-## Tech Used:
-
-* JavaScript
-* React/Redux
-* Postico
-* PostgreSQL
-* Jest/Enzyme
+* [JavaScript](https://www.javascript.com/)
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+* [SASS](https://sass-lang.com/)
+* [Jest](https://jestjs.io/) / [Enzyme](https://airbnb.io/enzyme/)
+* [The Movie Database](https://www.themoviedb.org/?language=en-US)
 
 ## Installation and Setup Instructions
 
